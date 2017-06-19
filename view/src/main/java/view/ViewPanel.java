@@ -1,6 +1,11 @@
 package view;
 
-
+/**
+ * <h1>The Classe ViewPanel.</h1>
+ * 
+ * @author Florian PFEIFER florian.pfeifer@viacesi.fr
+ * @version 1.0
+ */
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -13,6 +18,7 @@ import java.util.TimerTask;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
+import model.IModel;
 
 public class ViewPanel extends JPanel{
 
@@ -24,26 +30,31 @@ public class ViewPanel extends JPanel{
     Timer timer;
     int i;
     Image subSpriteHero;
+
+	
     
-    int[][] spriteSheetCoordsWalkLeft = { { 16, 16, 16, 16 }, { 0, 16, 16, 16 }, { 16, 16, 16, 16 }, { 0, 16, 16, 16 }};
+    int[][] spriteSheetCoords; /*{ { 0, 0, 16, 16 }, { 16, 0, 16, 16 }, { 0, 0, 16, 16 }, {  16, 0, 16, 16 }};*/
 
     public ViewPanel() {
-        setBackground(Color.black);
+		
+		/*this.spriteSheetCoords = */
+		
+       setBackground(Color.black);
         try
         {
-            imgHero = ImageIO.read(new File("C:/Users/victo/OneDrive/Exia.Cesi/Projet JAVA/Sprites/Rockford.png"));
+            imgHero = ImageIO.read(new File("D:/Document/test projects/Sprites/Rockford.png"));
             timer = new Timer();
             timer.scheduleAtFixedRate(new TimerTask() {
                 @Override
                 public void run() {
-                    subSpriteHero = imgHero.getSubimage(spriteSheetCoordsWalkLeft[i][0], spriteSheetCoordsWalkLeft[i][1], spriteSheetCoordsWalkLeft[i][2],
-                    		spriteSheetCoordsWalkLeft[i][3]);
+                    subSpriteHero = imgHero.getSubimage(spriteSheetCoords[i][0], spriteSheetCoords[i][1], spriteSheetCoords[i][2],
+                    		spriteSheetCoords[i][3]);
                     i++;
-                    if (i == spriteSheetCoordsWalkLeft.length) {
+                    if (i == spriteSheetCoords.length) {
                         i = 0;
                     }
                     
-                    
+                   
                     repaint();
                     revalidate();
                 }

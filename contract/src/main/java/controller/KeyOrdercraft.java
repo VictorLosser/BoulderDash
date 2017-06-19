@@ -5,6 +5,9 @@ public enum KeyOrdercraft {
 	MoveLeft,
 	MoveRight,
 	MoveUp,
-	MoveDown,
-	DiaLeftUp
+	MoveDown
+
+
+
+	
 }

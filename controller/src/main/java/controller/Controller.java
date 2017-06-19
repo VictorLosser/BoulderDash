@@ -1,5 +1,10 @@
 package controller;
-
+/**
+ * <h1>The Interface IController.</h1>
+ * 
+ * @author Florian PFEIFER florian.pfeifer@viacesi.fr
+ * @version 1.0
+ */
 import java.sql.SQLException;
 import java.util.List;
 
@@ -25,24 +30,44 @@ public class Controller implements IController {
     }
 
    
-    
 
-    
     public IView getView() {
         return this.view;
     }
-
-    
+  
     public IModel getModel() {
         return this.model;
     }
 
 
-	@Override
-	public void orderPerform(IUserOrder userOrder) {
-		// TODO Auto-generated method stub
+
+	public void orderPerform(KeyOrdercraft keyOrdercraft) {
+		switch (keyOrdercraft) {
+		case MoveLeft:
+			this.model.moveHero(-1, 0);
+			this.model.putInTabani(16, 16, 0, 16);
+			break;
+		case MoveRight:
+			this.model.moveHero(1 ,0);
+			this.model.putInTabani(16, 48, 0, 48);
+			break;
+		case MoveUp:
+			this.model.moveHero(0 , -1);
+			this.model.putInTabani(16, 16, 0, 16);
+			break;
+		case MoveDown:
+			this.model.moveHero(0 , 1);
+			this.model.putInTabani(0, 0, 16, 0);
+			break;
+		
+		default:
+			
+			break;
+		}
 		
 	}
+
+}
     
    
-}
+

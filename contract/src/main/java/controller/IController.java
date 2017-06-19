@@ -3,10 +3,10 @@ package controller;
 /**
  * <h1>The Interface IController.</h1>
  * 
- * @author Jean-Aymeric DIET jadiet@cesi.fr
+ * @author Florian PFEIFER florian.pfeifer@viacesi.fr
  * @version 1.0
  */
 public interface IController {
 
-	public void orderPerform(IUserOrder userOrder);
+	public void orderPerform(KeyOrdercraft keyOrdercraft);
 }

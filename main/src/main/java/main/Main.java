@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 import controller.Controller;
 import model.Model;
-import view.ViewFacade;
+import view.View;
 
 /**
  * <h1>The Class Main.</h1>
@@ -21,7 +21,7 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
-        final Controller controller = new Controller(new ViewFacade(), new Model());
+        final Controller controller = new Controller(new View(), new Model());
 
         /*try {
             controller.start();
