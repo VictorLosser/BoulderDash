@@ -1,6 +1,6 @@
 package controller;
 
-public enum Keycraft {
+public enum KeyOrdercraft {
 	
 	MoveLeft,
 	MoveRight,
