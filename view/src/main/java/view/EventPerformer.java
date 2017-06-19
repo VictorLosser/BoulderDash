@@ -2,19 +2,19 @@ package view;
 
 import java.awt.event.KeyEvent;
 
-import controller.IOrderPerformer;
+import controller.IController;
 
 
 public class EventPerformer {
 
-	private final IOrderPerformer orderPerformer;
+	private final IController orderPerformer;
 
-	public EventPerformer(final IOrderPerformer orderPerformer) {
+	public EventPerformer(final IController orderPerformer) {
 		this.orderPerformer = orderPerformer;
 	}
 	
-	private IUserOrder keyCodeToUserOrder(final int keyCode) {
-		IUserOrder userOrder;
+	private IController keyCodeToUserOrder(final int keyCode) {
+		IController userOrder;
 		switch (keyCode) {
 			case KeyEvent.VK_UP:
 				userOrder = new UserOrder(/*Order.UP*/);

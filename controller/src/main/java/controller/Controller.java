@@ -6,6 +6,7 @@ import java.util.List;
 import model.Example;
 import model.IModel;
 import view.IView;
+import controller.KeyOrdercraft;
 
 
 public class Controller implements IController {
@@ -35,6 +36,16 @@ public class Controller implements IController {
     public IModel getModel() {
         return this.model;
     }
+
+
+
+
+
+	@Override
+	public void orderPerform(KeyOrdercraft keyOrdercraft) {
+		// TODO Auto-generated method stub
+		
+	}
     
    
 }

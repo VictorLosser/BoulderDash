@@ -1,15 +1,17 @@
 package controller;
 
+import controller.KeyOrdercraft;
+
 public class UserOrder implements IUserOrder {
 
-	private final Order	order;
+	private final KeyOrdercraft	order;
 
-	public UserOrder(final Order order) {
+	public UserOrder(final KeyOrdercraft order) {
 		this.order = order;
 	}
 
 	@Override
-	public Order getOrder() {
+	public KeyOrdercraft getOrder() {
 		return this.order;
 	}
 }
