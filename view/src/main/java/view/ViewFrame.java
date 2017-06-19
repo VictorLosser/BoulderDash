@@ -34,8 +34,6 @@ public class ViewFrame extends JFrame  {
 	}
 
 	
-	public void displayMessage(final String message) {
-		JOptionPane.showMessageDialog(null, message);
-	}
+	
 	
 }
