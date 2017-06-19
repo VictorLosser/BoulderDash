@@ -8,5 +8,5 @@ package controller;
  */
 public interface IController {
 
-	public void orderPerform(KeyOrdercraft keyOrdercraft);
+	public void orderPerform(IUserOrder userOrder);
 }
