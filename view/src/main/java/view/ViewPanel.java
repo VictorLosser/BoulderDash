@@ -31,7 +31,7 @@ public class ViewPanel extends JPanel{
         setBackground(Color.black);
         try
         {
-            imgHero = ImageIO.read(new File("D:/Document/test projects/Sprites/Rockford.png"));
+            imgHero = ImageIO.read(new File("C:/Users/victo/OneDrive/Exia.Cesi/Projet JAVA/Sprites/Rockford.png"));
             timer = new Timer();
             timer.scheduleAtFixedRate(new TimerTask() {
                 @Override
