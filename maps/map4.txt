@@ -1,0 +1,22 @@
+0000000000000000000000000000000000000000
+0           BBBBBBBBBBBBBBBBBBBBBBBBBF 0
+0        BBBBBBBBBBBBBBBBBBBBBBBBBBBBS 0
+0        BBBBBBBBBBBBBBBBBBBBBBBBBBBBB 0
+0        BBBBBBBBBBBBBBBBBBBBBBBBBBBBB 0
+0        BBBBBBBBBBBBBBBBBBBBBBBBBBBBB 0
+0                            BBBBBBBBB 0
+0                            BBBBBBBBB 0
+0iiiiiii                     BBBBBBBBB 0
+0iiiiiii                     BBBBBBBBB 0
+0iiiiiii                     BBBBBBBBB 0
+0iiiiiii                      BBBBBBBB 0
+0iiiiiii                      BBBBBBBB 0
+0iiiiiii                      BBBBBBBB 0
+0iiiiiii                      BBBBBBBB 0
+0iiiiiii                               0
+0iiiiiii               iiiiiiii        0
+0iiiiiii iiiiiiiiiiiiiiiiiiiiii        0
+0iiiiiii iiiiiiiiiiiiiiiiiiiiii        0
+0        iiiiiiiiiiiiiiiiiiiiii        0
+0                                      0
+0000000000000000000000000000000000000000

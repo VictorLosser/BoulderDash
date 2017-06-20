@@ -1,0 +1,22 @@
+0000000000000000000000000000000000000000
+0* BB B** B   *B*  *    B   *     *B i 0
+0  SB i *     BBB  B *    *  * *   B B*0
+0    B  *i  *    B     * BB*       B BB0
+0i B  B*B*  *    B   *      * **      B0
+0* B   B  * BB  * BBi       * **      B0
+0**  *    B   *      * **      *  iBB  0
+0  * BB  * **   B    * **      B    B *0
+0  B   i      i *  BB*  * B B*  B*  i *0
+0* *    B BB  i *  BB*  *  i B   B  * B0
+0 * BB     **B*  i B B*  B*   B*  i *  0
+0B BB      **B*  * B BB   B  * BB  *   0
+0 B *   B   BB*  *    B   *     BB *   0
+0 B *   B i B B*  B*    *  * **    B   0
+0B  B*B*  *    B   i   B *B      B BB i0
+0B   BB*  B i   B*  * *   * B*      B  0
+0B i    * BB    BB*       * B*      B  0
+0  *    B   *      * **      B  * B   B0
+0* BB  * BB   B    * **      B  *i  * F0
+0B   *      * *i      *   BB  B*  i B  0
+0**   B     * *i      B  * Bi i *B *   0
+0000000000000000000000000000000000000000
