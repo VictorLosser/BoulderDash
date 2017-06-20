@@ -15,5 +15,11 @@ public interface IModel {
 	void putInTabani(int x1, int y1, int x2, int y2);
 
 	int[][] getTabani2d();
+	
+	void doTheThing();
+	
+	char[][] getTabmap2d();
+	
+	
   
 }

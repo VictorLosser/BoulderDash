@@ -33,7 +33,7 @@ public class ViewPanel extends JPanel{
 
 	
     
-    int[][] spriteSheetCoords; /*{ { 0, 0, 16, 16 }, { 16, 0, 16, 16 }, { 0, 0, 16, 16 }, {  16, 0, 16, 16 }};*/
+    int[][] spriteSheetCoords = { { 0, 0, 16, 16 }, { 16, 0, 16, 16 }, { 0, 0, 16, 16 }, {  16, 0, 16, 16 }};
 
     public ViewPanel() {
 		
@@ -42,7 +42,7 @@ public class ViewPanel extends JPanel{
        setBackground(Color.black);
         try
         {
-            imgHero = ImageIO.read(new File("D:/Document/test projects/Sprites/Rockford.png"));
+            imgHero = ImageIO.read(new File("C://Users/Flenoir/git/BoulderDash/sprite/Rockford.png"));
             timer = new Timer();
             timer.scheduleAtFixedRate(new TimerTask() {
                 @Override

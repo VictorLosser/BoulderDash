@@ -1,16 +1,9 @@
 package model;
-
 import java.sql.SQLException;
 import java.util.List;
 
 import model.dao.ExampleDAO;
 
-/**
- * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
- *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
- */
 public class Model implements IModel {
 
 	private int animationHeroX;
@@ -21,6 +14,18 @@ public class Model implements IModel {
 	private int animationHeroH;
 	private int widhtsprite = 16;
 	private int hightsprite = 16;
+	
+	private int height = 22;
+	private int width = 40;
+	private String message;
+	private int positionheroX;
+	private int positionheroY;
+	
+	
+	
+	
+	public char[][] tabmap2d = new char[this.getHeight()][this.getWidth()];
+	
 	
 	public int getAnimationHeroX() {
 		return animationHeroX;
@@ -84,12 +89,10 @@ public class Model implements IModel {
 	
 	
 	public void loadMessage(String key) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public void moveHero(int x, int y) {
-		// TODO Auto-generated method stub
 		
 	}
 	
@@ -114,11 +117,109 @@ public class Model implements IModel {
 		this.tabani2d[3][3] = hightsprite;
 	}
 	
+	public void putInTabmap(int i, int j, char car) {
+		this.tabmap2d[i][j] = car;
+	}
 
+	public void doTheThing() {
+		String[] tabmap = this.message.split("\n") ;
+		for(int i =0; i<tabmap.length; i++)
+		{
+			for (int j =0; j<tabmap[i].length();j++)
+			{
+				switch (tabmap[i].charAt(j)) {
+					case'O':
+						this.putInTabmap(i,j,'O');
+						break;
+					case'R':
+						this.putInTabmap(i,j,'R');
+						break;
+					case'S':
+						this.putInTabmap(i,j,'S');
+						break;
+					case'T':
+						this.putInTabmap(i,j,'T');
+						break;
+					case'Q':
+						this.putInTabmap(i,j,'Q');
+						break;
+					case'P':
+						this.putInTabmap(i,j,'P');
+						break;
+					case'N':
+						this.putInTabmap(i,j,'N');
+						break;
+					case'M':
+						this.putInTabmap(i,j,'M');
+						break;
+					case'L':
+						this.putInTabmap(i,j,'L');
+						break;
+					case'K':
+						this.putInTabmap(i,j,'K');
+						break;
+					case'J':
+						this.putInTabmap(i,j,'J');
+						break;
+					case'I':
+						this.putInTabmap(i,j,'I');
+						break;
+					case'U':
+						this.putInTabmap(i,j,'U');
+						break;
+					case'V':
+						this.putInTabmap(i,j,'V');
+						break;
+					case'X':
+						this.putInTabmap(i,j,'X');
+						break;
+					case'Y':
+						this.putInTabmap(i,j,'Y');
+						break;
+					case'Z':
+						this.putInTabmap(i,j,'Z');
+						break;
+					case'A':
+						this.putInTabmap(i,j,'A');
+						setPositionHeroX(j);
+						setPositionHeroY(i);
+						break;
+				}
+			}
+		}
+		
+	}
+	
 	public int[][] getTabani2d() {
 		return this.tabani2d;
 	}
 
-  
+	public int getWidth() {
+		return width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public char[][] getTabmap2d() {
+        return this.tabmap2d;
+    }
+
+	public int getPositionHeroY() {
+		return positionheroY;
+	}
+
+	public void setPositionHeroY(int positionheroY) {
+		this.positionheroY = positionheroY;
+	}
+
+	public int getPositionHeroX() {
+		return positionheroX;
+	}
+
+	public void setPositionHeroX(int positionheroX) {
+		this.positionheroX = positionheroX;
+	}
 
 }
