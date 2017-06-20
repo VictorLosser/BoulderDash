@@ -1,0 +1,22 @@
+0000000000000000000000000000000000000000
+0iii**ii*ii* ****i*ii ii*ii*iiii**i*i**0
+0i**iii***i*ii******i**i i*i****i*ii**i0
+0ii*******i*ii** ***i**iii*i* **i***ii*0
+0**i*ii******i**iii  ii**i*ii**i*ii **i0
+0**i*ii******i**i i*i****i*i*i**ii**i*i0
+0iii**i*i ii**ii**iii**i*i*** **ii**i*i0
+0*****i**iiii  ***i*ii *i*ii* **iiiiii*0
+0i*iiBBBBBBB BBBBBi****i*BBBBBB BBBBBB*0
+0i iiB           B*ii***iB           B*0
+0i*i*B SF        B*ii***iB           B*0
+0i**iB           B* **ii*B           B*0
+0i**iB           Biiii*i*B           Bi0
+0*iiiB           Bi**i i*B           Bi0
+0****B           Bi**ii**B           B*0
+0i*iiB           B *i**i*B           B*0
+0i*iiB           BBBBBBBBB           B*0
+0***iB                               B*0
+0***iB           Bii *i*iB           B*0
+0ii**B           B***i*iiB           B*0
+0ii  BBBBBBBBBBBBBi***iiiBBBBBBBBBBBBBi0
+0000000000000000000000000000000000000000
