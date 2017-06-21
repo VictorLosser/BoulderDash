@@ -10,9 +10,11 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.SwingUtilities;
 
+
 import controller.IController;
 import controller.IUserOrder;
 import controller.KeyOrdercraft;
+import model.IModel;
 
 
 public class View implements IView, Runnable {
@@ -22,9 +24,9 @@ public class View implements IView, Runnable {
 
 	
    
-    public View() {
+    public View(final IModel model) {
     	
-    	this.viewFrame = new ViewFrame();
+    	this.viewFrame = new ViewFrame(model);
 		SwingUtilities.invokeLater(this);
 	}
     
@@ -53,6 +55,24 @@ public class View implements IView, Runnable {
 	public void run() {
 		this.viewFrame.setVisible(true);
 		
+	}
+
+
+
+
+
+	public void setController(final IController controller) {
+		this.viewFrame.setController(controller);
+		
+	}
+
+
+
+
+
+	@Override
+	public void printMessage(final String message) {
+		this.viewFrame.printMessage(message);
 	}
 
 }

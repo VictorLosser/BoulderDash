@@ -5,10 +5,8 @@ package controller;
  * @author Florian PFEIFER florian.pfeifer@viacesi.fr
  * @version 1.0
  */
-import java.sql.SQLException;
-import java.util.List;
 
-import model.Example;
+import controller.IController;
 import model.IModel;
 import view.IView;
 import controller.KeyOrdercraft;
@@ -64,6 +62,13 @@ public class Controller implements IController {
 			
 			break;
 		}
+		
+	}
+
+
+
+	public void control() {
+		this.view.printMessage("YO :) ");
 		
 	}
 

@@ -1,6 +1,6 @@
 package main;
 
-import java.sql.SQLException;
+
 
 import controller.Controller;
 import model.Model;
@@ -21,8 +21,12 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
-        final Controller controller = new Controller(new View(), new Model());
-
+        
+        final Model model = new Model();
+        final View view = new View(model);
+        final Controller controller = new Controller(view, model);
+        view.setController(controller);
+		controller.control();
         /*try {
             controller.start();
         } catch (final SQLException exception) {

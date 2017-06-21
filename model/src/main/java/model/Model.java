@@ -1,10 +1,17 @@
 package model;
 import java.sql.SQLException;
-import java.util.List;
+
+import java.util.Observable;
+
+import javax.swing.JOptionPane;
 
 import model.dao.ExampleDAO;
+import model.Assets;
 
-public class Model implements IModel {
+
+
+
+public class Model extends Observable implements IModel {
 
 	private int animationHeroX;
 	private int animationHeroY;
@@ -20,6 +27,10 @@ public class Model implements IModel {
 	private String message;
 	private int positionheroX;
 	private int positionheroY;
+	
+	private Assets					assets;
+	
+	
 	
 	
 	public char[][] tabmap2d = new char[this.getHeight()][this.getWidth()];
@@ -94,7 +105,7 @@ public class Model implements IModel {
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
-		}
+		}JOptionPane.showMessageDialog(null, message);
 	}
 
 	public void moveHero(int x, int y) {
@@ -138,64 +149,40 @@ public class Model implements IModel {
 			for (int j =0; j<tabmap[i].length();j++)
 			{
 				switch (tabmap[i].charAt(j)) {
-					case'O':
-						this.putInTabmap(i,j,'O');
+					case'0':
+						this.putInTabmap(i,j,'0');
 						break;
-					case'R':
-						this.putInTabmap(i,j,'R');
+					case'*':
+						this.putInTabmap(i,j,'*');
+						break;
+					case'-':
+						this.putInTabmap(i,j,'-');
+						break;
+					case'B':
+						this.putInTabmap(i,j,'B');
+						break;
+					case'i':
+						this.putInTabmap(i,j,'i');
+						break;
+					case' ':
+						this.putInTabmap(i,j,' ');
 						break;
 					case'S':
 						this.putInTabmap(i,j,'S');
 						break;
-					case'T':
-						this.putInTabmap(i,j,'T');
+					case'F':
+						this.putInTabmap(i,j,'F');
 						break;
-					case'Q':
-						this.putInTabmap(i,j,'Q');
+					case'E':
+						this.putInTabmap(i,j,'E');
 						break;
-					case'P':
-						this.putInTabmap(i,j,'P');
-						break;
-					case'N':
-						this.putInTabmap(i,j,'N');
-						break;
-					case'M':
-						this.putInTabmap(i,j,'M');
-						break;
-					case'L':
-						this.putInTabmap(i,j,'L');
-						break;
-					case'K':
-						this.putInTabmap(i,j,'K');
-						break;
-					case'J':
-						this.putInTabmap(i,j,'J');
-						break;
-					case'I':
-						this.putInTabmap(i,j,'I');
-						break;
-					case'U':
-						this.putInTabmap(i,j,'U');
-						break;
-					case'V':
-						this.putInTabmap(i,j,'V');
-						break;
-					case'X':
-						this.putInTabmap(i,j,'X');
-						break;
-					case'Y':
-						this.putInTabmap(i,j,'Y');
-						break;
-					case'Z':
-						this.putInTabmap(i,j,'Z');
-						break;
-					case'A':
-						this.putInTabmap(i,j,'A');
+					case'H':
+						this.putInTabmap(i,j,'H');
 						setPositionHeroX(j);
 						setPositionHeroY(i);
 						break;
 				}
-			}
+			}JOptionPane.showMessageDialog(null, message);
 		}
 		
 	}
@@ -203,7 +190,8 @@ public class Model implements IModel {
 	
 	private void setMessage(final String message) {
 		this.message = message;
-		
+		this.setChanged();
+		this.notifyObservers();
 	}
 	
 	public int[][] getTabani2d() {
@@ -242,5 +230,19 @@ public class Model implements IModel {
     public Example getExampleById(final int id) throws SQLException {
         return ExampleDAO.getExampleById(id);
     }
+	
+	public Observable getObservable() {
+		return this;
+	}
+
+
+	public Assets getAssets() {
+		return assets;
+	}
+
+
+	public void setAssets(Assets assets) {
+		this.assets = assets;
+	}
 
 }

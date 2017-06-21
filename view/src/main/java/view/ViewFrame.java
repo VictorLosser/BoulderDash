@@ -1,6 +1,7 @@
 package view;
 
 
+import java.awt.GraphicsConfiguration;
 import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -32,50 +33,51 @@ public class ViewFrame extends JFrame implements KeyListener {
 	
 	private static final long	serialVersionUID	= -697358409737458175L;
 	
-	public ViewFrame() throws HeadlessException{
-		this.buildViewFrame();
+	public ViewFrame(final IModel model) throws HeadlessException{
+		this.buildViewFrame(model);
+	}
+	
+	public ViewFrame(final IModel model, final GraphicsConfiguration gc) {
+		super(gc);
+		this.buildViewFrame(model);
+	}
+	
+	public ViewFrame(final IModel model, final String title) throws HeadlessException {
+		super(title);
+		this.buildViewFrame(model);
+	}
+	
+	public ViewFrame(final IModel model, final String title, final GraphicsConfiguration gc) {
+		super(title, gc);
+		this.buildViewFrame(model);
 	}
 	
 	private IController getController() {
 		return this.controller;
 	}
 
-	/**
-	 * Sets the controller.
-	 *
-	 * @param controller
-	 *          the new controller
-	 */
+	
 	protected void setController(final IController controller) {
 		this.controller = controller;
 	}
 
-	/**
-	 * Gets the model.
-	 *
-	 * @return the model
-	 */
+	
 	protected IModel getModel() {
 		return this.model;
 	}
 
-	/**
-	 * Sets the model.
-	 *
-	 * @param model
-	 *          the new model
-	 */
+	
 	private void setModel(final IModel model) {
 		this.model = model;
 	}
 
 		
-	void buildViewFrame() {
-		
+	void buildViewFrame(final IModel model) {
+		this.setModel(model);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
-		this.setTitle("Boulder_Dash");
-		this.setContentPane(new ViewPanel());
+		this.addKeyListener(this);
+		this.setContentPane(new ViewPanel(this));
 		this.setSize(500, 500);
 		this.setLocationRelativeTo(null);
 	}
@@ -96,5 +98,9 @@ public class ViewFrame extends JFrame implements KeyListener {
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
-	}	
+	}
+
+	public void printMessage(final String message) {
+		JOptionPane.showMessageDialog(null, message);
+	}
 }

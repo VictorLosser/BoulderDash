@@ -1,7 +1,9 @@
 package model;
 
 import java.sql.SQLException;
-import java.util.List;
+
+import java.util.Observable;
+
 
 
 public interface IModel {
@@ -20,6 +22,10 @@ public interface IModel {
 	
 	char[][] getTabmap2d();
 	
+	
+	
 	 Example getExampleById(int id) throws SQLException;
+	 
+	 Observable getObservable();
   
 }
