@@ -42,7 +42,7 @@ public class ViewPanel extends JPanel{
        setBackground(Color.black);
         try
         {
-            imgHero = ImageIO.read(new File("C://Users/Flenoir/git/BoulderDash/sprite/Rockford.png"));
+            imgHero = ImageIO.read(new File("C://Users/victo/git/Boulder_Dash/sprite/Rockford.png"));
             timer = new Timer();
             timer.scheduleAtFixedRate(new TimerTask() {
                 @Override
