@@ -1,0 +1,8 @@
+1 = Mur bordure
+3 = Boulder
+4 = Vide (pas de terre)
+2 = Brique
+7 = Diamant
+0 = Terre
+8 = Spawn
+9 = Finish
