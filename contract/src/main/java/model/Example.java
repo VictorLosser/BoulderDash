@@ -60,8 +60,5 @@ public class Example {
      * (non-Javadoc)
      * @see java.lang.Object#toString()
      */
-    @Override
-    public String toString() {
-        return this.getId() + " : " + this.getName();
-    }
+    
 }

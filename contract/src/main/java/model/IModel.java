@@ -20,6 +20,6 @@ public interface IModel {
 	
 	char[][] getTabmap2d();
 	
-	
+	 Example getExampleById(int id) throws SQLException;
   
 }

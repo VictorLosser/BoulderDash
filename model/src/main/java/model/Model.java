@@ -22,9 +22,9 @@ public class Model implements IModel {
 	private int positionheroY;
 	
 	
-	
-	
 	public char[][] tabmap2d = new char[this.getHeight()][this.getWidth()];
+	
+	
 	
 	
 	public int getAnimationHeroX() {
@@ -89,7 +89,12 @@ public class Model implements IModel {
 	
 	
 	public void loadMessage(String key) {
-		
+		try {
+			this.setMessage(this.getExampleById(1).getName());
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
 	}
 
 	public void moveHero(int x, int y) {
@@ -119,6 +124,11 @@ public class Model implements IModel {
 	
 	public void putInTabmap(int i, int j, char car) {
 		this.tabmap2d[i][j] = car;
+	}
+	
+	public String getMessage() {
+		return this.message;
+
 	}
 
 	public void doTheThing() {
@@ -190,6 +200,12 @@ public class Model implements IModel {
 		
 	}
 	
+	
+	private void setMessage(final String message) {
+		this.message = message;
+		
+	}
+	
 	public int[][] getTabani2d() {
 		return this.tabani2d;
 	}
@@ -221,5 +237,10 @@ public class Model implements IModel {
 	public void setPositionHeroX(int positionheroX) {
 		this.positionheroX = positionheroX;
 	}
+
+	@Override
+    public Example getExampleById(final int id) throws SQLException {
+        return ExampleDAO.getExampleById(id);
+    }
 
 }
