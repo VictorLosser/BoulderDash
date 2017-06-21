@@ -8,6 +8,10 @@ import java.util.Observable;
 
 public interface IModel {
 
+	
+
+
+
 	void loadMessage(String key);
 
 	
@@ -27,5 +31,9 @@ public interface IModel {
 	 Example getExampleById(int id) throws SQLException;
 	 
 	 Observable getObservable();
+
+
+
+	
   
 }

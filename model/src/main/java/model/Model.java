@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 import model.MapToArray;
 import model.dao.ExampleDAO;
-import model.Assets;
+
 
 
 
@@ -22,7 +22,7 @@ public class Model extends Observable implements IModel {
 	private String message;
 	
 	
-	private Assets					assets;
+	
 	
 	private Animation 				animation;
 	
@@ -72,22 +72,10 @@ public class Model extends Observable implements IModel {
 	}
 
 	public void putInTabani(int x1, int y1, int x2, int y2) {
-		this.tabani2d[0][0] = animation.getAnimationHero()+x1;
-		this.tabani2d[0][1] = animation.getAnimationHero()+y1;
-		this.tabani2d[2][0] = animation.getAnimationHero()+x1;
-		this.tabani2d[2][1] = animation.getAnimationHero()+y1;
-		this.tabani2d[0][2] = animation.getWidhtSprite();
-		this.tabani2d[0][3] = animation.getHightSprite();
-		this.tabani2d[2][2] = animation.getWidhtSprite();
-		this.tabani2d[2][3] = animation.getHightSprite();
-		this.tabani2d[1][0] = animation.getAnimationHero()+x2;
-		this.tabani2d[1][1] = animation.getAnimationHero()+y2;
-		this.tabani2d[3][0] = animation.getAnimationHero()+x2;
-		this.tabani2d[3][1] = animation.getAnimationHero()+y2;
-		this.tabani2d[1][2] = animation.getWidhtSprite();
-		this.tabani2d[1][3] = animation.getHightSprite();
-		this.tabani2d[3][2] = animation.getWidhtSprite();
-		this.tabani2d[3][3] = animation.getHightSprite();
+		this.tabani2d[0][0] = animation.getAnimationHero()+x1;this.tabani2d[0][1] = animation.getAnimationHero()+y1;this.tabani2d[2][0] = animation.getAnimationHero()+x1;
+		this.tabani2d[2][1] = animation.getAnimationHero()+y1;this.tabani2d[0][2] = animation.getWidhtSprite();this.tabani2d[0][3] = animation.getHightSprite();this.tabani2d[2][2] = animation.getWidhtSprite();
+		this.tabani2d[2][3] = animation.getHightSprite();this.tabani2d[1][0] = animation.getAnimationHero()+x2;this.tabani2d[1][1] = animation.getAnimationHero()+y2;this.tabani2d[3][0] = animation.getAnimationHero()+x2;
+		this.tabani2d[3][1] = animation.getAnimationHero()+y2;this.tabani2d[1][2] = animation.getWidhtSprite();this.tabani2d[1][3] = animation.getHightSprite();this.tabani2d[3][2] = animation.getWidhtSprite();this.tabani2d[3][3] = animation.getHightSprite();
 	}
 			
 		
@@ -122,14 +110,9 @@ public class Model extends Observable implements IModel {
 	}
 
 
-	public Assets getAssets() {
-		return assets;
-	}
+	
 
 
-	public void setAssets(Assets assets) {
-		this.assets = assets;
-	}
 
 
 }

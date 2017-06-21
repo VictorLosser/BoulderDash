@@ -33,7 +33,12 @@ public class ViewPanel extends JPanel implements Observer{
     Timer timer;
     int i;
     Image subSpriteHero;
-
+    ArrayToGraf draw = new ArrayToGraf();
+    Image maps;
+    int[][] array_map1;
+	
+	Image bckground_1;
+	
 	
     
     //int[][] spriteSheetCoords = { { 0, 0, 16, 16 }, { 16, 0, 16, 16 }, { 0, 0, 16, 16 }, {  16, 0, 16, 16 }};
@@ -41,6 +46,12 @@ public class ViewPanel extends JPanel implements Observer{
     public ViewPanel(final ViewFrame viewFrame) {
 		this.setViewFrame(viewFrame);
 		viewFrame.getModel().getObservable().addObserver(this);
+		
+		//maps = draw.getMap(this.viewFrame.getModel().getTabmap2d().getArray());
+		
+		
+
+		
 	
 		/*this.spriteSheetCoords = */
 		
@@ -73,9 +84,6 @@ public class ViewPanel extends JPanel implements Observer{
     }
 
     
-    private ViewFrame getViewFrame() {
-		return this.viewFrame;
-	}
     
     private void setViewFrame(final ViewFrame viewFrame) {
 		this.viewFrame = viewFrame;
