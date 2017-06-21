@@ -1,10 +1,13 @@
 package model;
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 
 import java.util.Observable;
 
 import javax.swing.JOptionPane;
 
+import model.MapToArray;
 import model.dao.ExampleDAO;
 import model.Assets;
 
@@ -13,90 +16,33 @@ import model.Assets;
 
 public class Model extends Observable implements IModel {
 
-	private int animationHeroX;
-	private int animationHeroY;
-	private int animationHeroX2;
-	private int animationHeroY2;
-	private int animationHeroW;
-	private int animationHeroH;
-	private int widhtsprite = 16;
-	private int hightsprite = 16;
 	
-	private int height = 22;
-	private int width = 40;
+	
+	
 	private String message;
-	private int positionheroX;
-	private int positionheroY;
+	
 	
 	private Assets					assets;
 	
+	private Animation 				animation;
 	
 	
 	
-	public char[][] tabmap2d = new char[this.getHeight()][this.getWidth()];
+	File file = new File("maps/map1.txt");
 	
 	
+	public int[][] tabmap2d;
 	
-	
-	public int getAnimationHeroX() {
-		return animationHeroX;
+	public Model(){
+		
+		
+		MapToArray map1 = new MapToArray("C:/Users/Windows/git/BoulderDash/model/res/maps/map1.txt");
+		try {
+			tabmap2d = map1.getArray();
+		} catch (IOException e) {	
+			e.printStackTrace();
+		}
 	}
-
-	public void setAnimationHeroX(int animationHeroX) {
-		this.animationHeroX = animationHeroX;
-	}
-
-	public int getAnimationHeroY() {
-		return animationHeroY;
-	}
-
-	public void setAnimationHeroY(int animationHeroY) {
-		this.animationHeroY = animationHeroY;
-	}
-	
-	public int getAnimationHeroX2() {
-		return animationHeroX2;
-	}
-
-	public void setAnimationHeroX2(int animationHeroX2) {
-		this.animationHeroX2 = animationHeroX2;
-	}
-
-	public int getAnimationHeroY2() {
-		return animationHeroY2;
-	}
-
-	public void setAnimationHeroY2(int animationHeroY2) {
-		this.animationHeroY2 = animationHeroY2;
-	}
-
-	public int getAnimationHeroW() {
-		return animationHeroW;
-	}
-
-	public void setAnimationHeroW(int animationHeroW) {
-		this.animationHeroW = animationHeroW;
-	}
-
-	public int getAnimationHeroH() {
-		return animationHeroH;
-	}
-
-	public void setAnimationHeroH(int animationHeroH) {
-		this.animationHeroH = animationHeroH;
-	}
-	
-	public int getHightSprite() {
-		return this.hightsprite;
-	}
-
-	
-	public int getWidhtSprite() {
-		return this.widhtsprite;
-	}
-
-	
-	
 	
 	
 	public void loadMessage(String key) {
@@ -114,24 +60,7 @@ public class Model extends Observable implements IModel {
 	
 	public int[][] tabani2d;
 	
-	public void putInTabani(int x1, int y1, int x2, int y2) {
-		this.tabani2d[0][0] = animationHeroX+x1;
-		this.tabani2d[0][1] = animationHeroY+y1;
-		this.tabani2d[2][0] = animationHeroX+x1;
-		this.tabani2d[2][1] = animationHeroY+y1;
-		this.tabani2d[0][2] = widhtsprite;
-		this.tabani2d[0][3] = hightsprite;
-		this.tabani2d[2][2] = widhtsprite;
-		this.tabani2d[2][3] = hightsprite;
-		this.tabani2d[1][0] = animationHeroX+x2;
-		this.tabani2d[1][1] = animationHeroY+y2;
-		this.tabani2d[3][0] = animationHeroX+x2;
-		this.tabani2d[3][1] = animationHeroY+y2;
-		this.tabani2d[1][2] = widhtsprite;
-		this.tabani2d[1][3] = hightsprite;
-		this.tabani2d[3][2] = widhtsprite;
-		this.tabani2d[3][3] = hightsprite;
-	}
+	
 	
 	public void putInTabmap(int i, int j, char car) {
 		this.tabmap2d[i][j] = car;
@@ -142,50 +71,27 @@ public class Model extends Observable implements IModel {
 
 	}
 
-	public void doTheThing() {
-		String[] tabmap = this.message.split("\n") ;
-		for(int i =0; i<tabmap.length; i++)
-		{
-			for (int j =0; j<tabmap[i].length();j++)
-			{
-				switch (tabmap[i].charAt(j)) {
-					case'0':
-						this.putInTabmap(i,j,'0');
-						break;
-					case'*':
-						this.putInTabmap(i,j,'*');
-						break;
-					case'-':
-						this.putInTabmap(i,j,'-');
-						break;
-					case'B':
-						this.putInTabmap(i,j,'B');
-						break;
-					case'i':
-						this.putInTabmap(i,j,'i');
-						break;
-					case' ':
-						this.putInTabmap(i,j,' ');
-						break;
-					case'S':
-						this.putInTabmap(i,j,'S');
-						break;
-					case'F':
-						this.putInTabmap(i,j,'F');
-						break;
-					case'E':
-						this.putInTabmap(i,j,'E');
-						break;
-					case'H':
-						this.putInTabmap(i,j,'H');
-						setPositionHeroX(j);
-						setPositionHeroY(i);
-						break;
-				}
-			}JOptionPane.showMessageDialog(null, message);
-		}
-		
+	public void putInTabani(int x1, int y1, int x2, int y2) {
+		this.tabani2d[0][0] = animation.getAnimationHero()+x1;
+		this.tabani2d[0][1] = animation.getAnimationHero()+y1;
+		this.tabani2d[2][0] = animation.getAnimationHero()+x1;
+		this.tabani2d[2][1] = animation.getAnimationHero()+y1;
+		this.tabani2d[0][2] = animation.getWidhtSprite();
+		this.tabani2d[0][3] = animation.getHightSprite();
+		this.tabani2d[2][2] = animation.getWidhtSprite();
+		this.tabani2d[2][3] = animation.getHightSprite();
+		this.tabani2d[1][0] = animation.getAnimationHero()+x2;
+		this.tabani2d[1][1] = animation.getAnimationHero()+y2;
+		this.tabani2d[3][0] = animation.getAnimationHero()+x2;
+		this.tabani2d[3][1] = animation.getAnimationHero()+y2;
+		this.tabani2d[1][2] = animation.getWidhtSprite();
+		this.tabani2d[1][3] = animation.getHightSprite();
+		this.tabani2d[3][2] = animation.getWidhtSprite();
+		this.tabani2d[3][3] = animation.getHightSprite();
 	}
+			
+		
+	
 	
 	
 	private void setMessage(final String message) {
@@ -198,33 +104,13 @@ public class Model extends Observable implements IModel {
 		return this.tabani2d;
 	}
 
-	public int getWidth() {
-		return width;
-	}
+	
 
-	public int getHeight() {
-		return height;
-	}
-
-	public char[][] getTabmap2d() {
+	public int[][] getTabmap2d() {
         return this.tabmap2d;
     }
 
-	public int getPositionHeroY() {
-		return positionheroY;
-	}
-
-	public void setPositionHeroY(int positionheroY) {
-		this.positionheroY = positionheroY;
-	}
-
-	public int getPositionHeroX() {
-		return positionheroX;
-	}
-
-	public void setPositionHeroX(int positionheroX) {
-		this.positionheroX = positionheroX;
-	}
+	
 
 	@Override
     public Example getExampleById(final int id) throws SQLException {
@@ -244,5 +130,6 @@ public class Model extends Observable implements IModel {
 	public void setAssets(Assets assets) {
 		this.assets = assets;
 	}
+
 
 }

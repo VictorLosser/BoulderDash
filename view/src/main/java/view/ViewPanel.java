@@ -90,133 +90,24 @@ public class ViewPanel extends JPanel implements Observer{
         //super.paintComponent(graphics);
         //graphics.drawImage(subSpriteHero, 0, 0, 32, 32, null);
         
-        afficherMap(graphics);
+       
       
     }
 
+
 	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
+	}
+}			
+	/*@Override
 	public void update(Observable o, Object arg) {
 		this.viewFrame.getModel().doTheThing();
 		this.repaint();
 		
 		
-	}
+	}*/
 	
-public void afficherMap(final Graphics graphics) {
-		
-		this.tabmap = this.viewFrame.getModel().getTabmap2d();
 
-		for(int i =0; i<this.tabmap.length; i++)
-		{
-			for (int j =0; j<this.tabmap[i].length;j++)
-			{
-				switch (this.tabmap[i][j]) {
-					case '0':try {
-						System.out.print(tabmap[i][j]);
-						BufferedImage img = ImageIO.read(new File("/textures/Enemies.png"));
-						Image subimg = img.getSubimage(16, 16, 16, 16);
-						graphics.drawImage(subimg, 32*j, 32*i, this);
-					} catch(IOException e) {
-						e.printStackTrace();
-					}
-						break;
-					case '*':try {
-						System.out.print(tabmap[i][j]);
-						BufferedImage img = ImageIO.read(new File("/textures/Enemies.png"));
-						Image subimg = img.getSubimage(16, 16, 16, 16);
-						graphics.drawImage(subimg, 32*j, 32*i, this);
-					} catch(IOException e) {
-						e.printStackTrace();
-					}
-						break;
-
-					case '-':try {
-						System.out.print(tabmap[i][j]);
-						BufferedImage img = ImageIO.read(new File("/textures/Enemies.png"));
-						Image subimg = img.getSubimage(16, 16, 16, 16);
-						graphics.drawImage(subimg, 32*j, 32*i, this);
-					} catch(IOException e) {
-						e.printStackTrace();
-					}
-						break;
-
-					case 'B':try {
-						System.out.print(tabmap[i][j]);
-						BufferedImage img = ImageIO.read(new File("/textures/Enemies.png"));
-						Image subimg = img.getSubimage(16, 16, 16, 16);
-						graphics.drawImage(subimg, 32*j, 32*i, this);
-					} catch(IOException e) {
-						e.printStackTrace();
-					}
-						break;
-
-					case 'i':try {
-						System.out.print(tabmap[i][j]);
-						BufferedImage img = ImageIO.read(new File("/textures/Enemies.png"));
-						Image subimg = img.getSubimage(16, 16, 16, 16);
-						graphics.drawImage(subimg, 32*j, 32*i, this);
-					} catch(IOException e) {
-						e.printStackTrace();
-					}
-						break;
-
-
-					case ' ':try {
-						System.out.print(tabmap[i][j]);
-						BufferedImage img = ImageIO.read(new File("/textures/Enemies.png"));
-						Image subimg = img.getSubimage(16, 16, 16, 16);
-						graphics.drawImage(subimg, 32*j, 32*i, this);
-					} catch(IOException e) {
-						e.printStackTrace();
-					}
-						break;
-
-					case 'F':try {
-						System.out.print(tabmap[i][j]);
-						BufferedImage img = ImageIO.read(new File("/textures/Enemies.png"));
-						Image subimg = img.getSubimage(16, 16, 16, 16);
-						graphics.drawImage(subimg, 32*j, 32*i, this);
-					} catch(IOException e) {
-						e.printStackTrace();
-					}
-						break;
-
-					case 'S':try {
-						System.out.print(tabmap[i][j]);
-						BufferedImage img = ImageIO.read(new File("/textures/Enemies.png"));
-						Image subimg = img.getSubimage(16, 16, 16, 16);
-						graphics.drawImage(subimg, 32*j, 32*i, this);
-					} catch(IOException e) {
-						e.printStackTrace();
-					}
-						break;
-
-					case 'E':try {
-						System.out.print(tabmap[i][j]);
-						BufferedImage img = ImageIO.read(new File("/textures/Enemies.png"));
-						Image subimg = img.getSubimage(16, 16, 16, 16);
-						graphics.drawImage(subimg, 32*j, 32*i, this);
-					} catch(IOException e) {
-						e.printStackTrace();
-					}
-						break;
-
-
-					case 'H':try {
-						System.out.print(tabmap[i][j]);
-						BufferedImage img = ImageIO.read(new File("/textures/Rockford.png"));
-						Image subimg = img.getSubimage(16, 16, 16, 16);
-						graphics.drawImage(subimg, 32*j, 32*i, this);
-					} catch(IOException e) {
-						e.printStackTrace();
-					}
-						break;
-						
-						
-				}
-				
-			}
-			System.out.println();
-		}
-	}        
-}
+	

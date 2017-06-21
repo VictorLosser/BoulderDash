@@ -18,9 +18,9 @@ public interface IModel {
 
 	int[][] getTabani2d();
 	
-	void doTheThing();
 	
-	char[][] getTabmap2d();
+	
+	int[][] getTabmap2d();
 	
 	
 	

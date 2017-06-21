@@ -27,6 +27,8 @@ public abstract class Main {
         final Controller controller = new Controller(view, model);
         view.setController(controller);
 		controller.control();
+		
+		
         /*try {
             controller.start();
         } catch (final SQLException exception) {
