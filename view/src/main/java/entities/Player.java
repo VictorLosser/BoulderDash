@@ -13,10 +13,10 @@ public class Player extends Creature{
 
         //These variables will size the rectangle that will be in collision with an object
         //If we don't define these variables, it will be full size by default
-        bounds.x = 10;
-        bounds.y = 10;
-        bounds.width = 40;
-        bounds.height = 40;
+        bounds.x = 8;
+        bounds.y = 16;
+        bounds.width = 48;
+        bounds.height = 50;
     }
 
     @Override
