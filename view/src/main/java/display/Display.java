@@ -1,6 +1,7 @@
 package display;
 
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
@@ -19,6 +20,7 @@ public class Display { //This class will create and show the frame
 		this.width = width;
 		this.height = height;
 		
+		
 		createDisplay();
 	}
 	
@@ -30,6 +32,7 @@ public class Display { //This class will create and show the frame
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+		frame.setBackground(Color.BLACK);
 		
 		canvas = new Canvas();
 		canvas.setPreferredSize(new Dimension(width, height));
