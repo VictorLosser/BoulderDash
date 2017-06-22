@@ -1,8 +1,11 @@
-1 = Mur bordure
+//OBJECTS
+0 = Ground
+1 = Wall
+2 = Wall (or brick)
 3 = Boulder
-4 = Vide (pas de terre)
-2 = Brique
-7 = Diamant
-0 = Terre
+4 = none
+7 = Diamond
+
+//PLAYER
 8 = Spawn
 9 = Finish
