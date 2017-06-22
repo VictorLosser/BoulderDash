@@ -1,5 +1,5 @@
 package object;
 
-public class Motionless {
+public class Motionless extends Object{
 
 }
