@@ -27,13 +27,13 @@ public class ArrayToGraf {
     	  for(int length = 0; length<map.length; length++)
               switch(map[length][heigth]){
               	case 0:
-              			g2d.drawImage(Assets.none, length*16, heigth*16, null);
+              			g2d.drawImage(Assets.none, length*50, heigth*50, null);
                                 break;
               	case 1:
-              			g2d.drawImage(Assets.wall, length*16, heigth*16, null);
+              			g2d.drawImage(Assets.wall, length*50, heigth*50, null);
               					break;
               	case 2:
-              			g2d.drawImage(Assets.ground, length*16, heigth*16, null);
+              			g2d.drawImage(Assets.ground, length*50, heigth*50, null);
               					break;
 }
       }

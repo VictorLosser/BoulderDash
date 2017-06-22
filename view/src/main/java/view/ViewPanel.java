@@ -24,7 +24,7 @@ public class ViewPanel extends JPanel implements Observer{
 
 	private ViewFrame	viewFrame;
 	
-	private MapToArray	mapToArray;
+	
 	
 	
 	
@@ -37,6 +37,7 @@ public class ViewPanel extends JPanel implements Observer{
     
    
 	Image bckground_1;
+	Image background;
 	MapToArray map1;
 	
 	int[][] array_map1;
@@ -48,10 +49,11 @@ public class ViewPanel extends JPanel implements Observer{
 
     public ViewPanel(final ViewFrame viewFrame) throws IOException {
 		this.setViewFrame(viewFrame);
-		viewFrame.getModel().getObservable().addObserver(this);
-		map1 = new MapToArray("C:/Users/Windows/git/BoulderDash/model/res/maps/map1.txt");
+		
+		map1 = new MapToArray("C:/Users/Windows/git/BoulderDash/maps/map1.txt");
+		
 		array_map1 = map1.getArray();
-		bckground_1 = draw.getMap(array_map1);
+		background = draw.getMap(array_map1);
 		
 		
 
@@ -96,12 +98,12 @@ public class ViewPanel extends JPanel implements Observer{
     
     @Override
     public void paintComponent(Graphics graphics) {
-    	graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
-		graphics.setColor(Color.BLACK);
-		graphics.fillRect(0, 0, this.getWidth(), this.getHeight());
+    	//graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
+		//graphics.setColor(Color.BLACK);
+		//graphics.fillRect(0, 0, this.getWidth(), this.getHeight());
 		
         //super.paintComponent(graphics);
-        graphics.drawImage(bckground_1, 0, 0, 32, 32, null);
+        graphics.drawImage(background, 32, 32, null);
         
        
       
@@ -115,15 +117,7 @@ public class ViewPanel extends JPanel implements Observer{
 	}
 
 
-	public MapToArray getMapToArray() {
-		return mapToArray;
-	}
-
-
-	public void setMapToArray(MapToArray mapToArray) {
-		this.mapToArray = mapToArray;
-	}
-}			
+}	
 	/*@Override
 	public void update(Observable o, Object arg) {
 		this.viewFrame.getModel().doTheThing();
