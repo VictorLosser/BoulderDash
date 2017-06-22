@@ -13,8 +13,8 @@ public class Player extends Creature{
 
         //These variables will size the rectangle that will be in collision with an object
         //If we don't define these variables, it will be full size by default
-        bounds.x = 8;
-        bounds.y = 16;
+        bounds.x = 7;
+        bounds.y = 15;
         bounds.width = 48;
         bounds.height = 50;
     }
@@ -44,10 +44,10 @@ public class Player extends Creature{
     public void render(Graphics g) {
         g.drawImage(Assets.staticPlayer, (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
 
-        g.setColor(Color.red);
+        /*g.setColor(Color.red);
         g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()),
                 (int) (y + bounds.y - handler.getGameCamera().getyOffset()),
-                bounds.width, bounds.height);
+                bounds.width, bounds.height);*/
     }
 
 }

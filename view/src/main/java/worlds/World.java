@@ -61,5 +61,13 @@ public class World {
             }
         }
     }
+    
+    public int getHeight(){
+    	return height;
+    }
+    
+    public int getWidth(){
+    	return width;
+    }
 
 }
