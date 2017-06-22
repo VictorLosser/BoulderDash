@@ -1,14 +1,11 @@
 package view;
 
-
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 
-import view.Assets;
-
-
+import graphics.Assets;
 
 public class ArrayToGraf {
 	 
