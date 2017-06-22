@@ -11,7 +11,7 @@ public class Assets {//This class will load all images from the sprite and assig
 	public static BufferedImage leftPlayer1, rightPlayer1, upPlayer1, downPlayer1, staticPlayer1;
 	
 	//Here we create the different variable of the Enemies images on the sprite
-	public static BufferedImage wall, boulder, ground, dash, none;
+	public static BufferedImage wall, boulder, ground, diamond, none;
 
 	
 	public static void init(){
@@ -36,7 +36,7 @@ public class Assets {//This class will load all images from the sprite and assig
 		ground = sheetEnemies.crop(width, 0, width, height);
 		none = sheetEnemies.crop(width*2, 0, width, height);
 		boulder = sheetEnemies.crop(width*3, 0, width, height);
-		dash = sheetEnemies.crop(width*4, 0, width, height);
+		diamond = sheetEnemies.crop(width*4, 0, width, height);
 	}
 
 }
