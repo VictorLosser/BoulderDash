@@ -37,5 +37,11 @@ public class Player extends Creature{
 	public void render(Graphics g) {
 		g.drawImage(Assets.staticPlayer, (int) (x - view.getGameCamera().getxOffset()), (int) (y - view.getGameCamera().getyOffset()), width, height, null);
 	}
-
+	//condition no contact between objects and player
+    //public boolean contactBefore(Object object){
+        //if(this.x + this.width < object.getX() || this.x + this.tilelenght > object.getX() +5 || this.y + this.height <= object.getY() || this.y >= object.getY() + object.getHeight())
+        //    {return false;}
+        //else
+            //{return true;}
+    //}
 }

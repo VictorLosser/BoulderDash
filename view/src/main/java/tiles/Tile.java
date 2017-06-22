@@ -44,4 +44,12 @@ public class Tile {
 		return id;
 	}
 	
+	
+	//Detection if there is a contact between player and object
+	
+	
+	//if(this.player)
+	
+	
+	
 }
