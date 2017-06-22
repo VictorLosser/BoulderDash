@@ -7,6 +7,7 @@ import java.util.Observable;
 
 import javax.swing.JOptionPane;
 
+import controller.IController;
 import model.MapToArray;
 import model.dao.ExampleDAO;
 
@@ -14,37 +15,31 @@ import model.dao.ExampleDAO;
 
 
 
+
 public class Model extends Observable implements IModel {
 
-	
-	
-	
-	private String message;
-	
-	
-	
-	
-	private Animation 				animation;
-	
-	
-	
-	File file = new File("maps/map1.txt");
-	
-	
-	public int[][] tabmap2d;
-	
-	public Model(){
 		
+	private String message;	
+	
+	private Animation 	animation;
+	public int[][] tabmap2d;
+	public int[][] tabani2d;
+	
+	public Model() throws IOException{
 		
 		MapToArray map1 = new MapToArray("C:/Users/Windows/git/BoulderDash/model/res/maps/map1.txt");
-		try {
-			tabmap2d = map1.getArray();
-		} catch (IOException e) {	
-			e.printStackTrace();
-		}
+			this.setTabmap2d(map1.getArray());	
+			
 	}
 	
+	public int[][] getTabmap2d() {
+        return this.tabmap2d;
+    }
 	
+	protected void setTabmap2d(final int[][] tabmap2d ) {
+		this.tabmap2d  = tabmap2d ;
+	}
+		
 	public void loadMessage(String key) {
 		try {
 			this.setMessage(this.getExampleById(1).getName());
@@ -54,17 +49,9 @@ public class Model extends Observable implements IModel {
 		}JOptionPane.showMessageDialog(null, message);
 	}
 
-	public void moveHero(int x, int y) {
-		
+	public void moveHero(int x, int y) {	
 	}
 	
-	public int[][] tabani2d;
-	
-	
-	
-	public void putInTabmap(int i, int j, char car) {
-		this.tabmap2d[i][j] = car;
-	}
 	
 	public String getMessage() {
 		return this.message;
@@ -80,8 +67,6 @@ public class Model extends Observable implements IModel {
 			
 		
 	
-	
-	
 	private void setMessage(final String message) {
 		this.message = message;
 		this.setChanged();
@@ -92,14 +77,6 @@ public class Model extends Observable implements IModel {
 		return this.tabani2d;
 	}
 
-	
-
-	public int[][] getTabmap2d() {
-        return this.tabmap2d;
-    }
-
-	
-
 	@Override
     public Example getExampleById(final int id) throws SQLException {
         return ExampleDAO.getExampleById(id);
@@ -108,11 +85,5 @@ public class Model extends Observable implements IModel {
 	public Observable getObservable() {
 		return this;
 	}
-
-
-	
-
-
-
 
 }

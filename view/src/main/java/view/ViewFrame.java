@@ -5,6 +5,7 @@ import java.awt.GraphicsConfiguration;
 import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -33,21 +34,21 @@ public class ViewFrame extends JFrame implements KeyListener {
 	
 	private static final long	serialVersionUID	= -697358409737458175L;
 	
-	public ViewFrame(final IModel model) throws HeadlessException{
+	public ViewFrame(final IModel model) throws HeadlessException, IOException{
 		this.buildViewFrame(model);
 	}
 	
-	public ViewFrame(final IModel model, final GraphicsConfiguration gc) {
+	public ViewFrame(final IModel model, final GraphicsConfiguration gc) throws IOException {
 		super(gc);
 		this.buildViewFrame(model);
 	}
 	
-	public ViewFrame(final IModel model, final String title) throws HeadlessException {
+	public ViewFrame(final IModel model, final String title) throws HeadlessException, IOException {
 		super(title);
 		this.buildViewFrame(model);
 	}
 	
-	public ViewFrame(final IModel model, final String title, final GraphicsConfiguration gc) {
+	public ViewFrame(final IModel model, final String title, final GraphicsConfiguration gc) throws IOException {
 		super(title, gc);
 		this.buildViewFrame(model);
 	}
@@ -72,7 +73,7 @@ public class ViewFrame extends JFrame implements KeyListener {
 	}
 
 		
-	void buildViewFrame(final IModel model) {
+	void buildViewFrame(final IModel model) throws IOException {
 		this.setModel(model);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);

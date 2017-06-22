@@ -22,15 +22,11 @@ public interface IModel {
 
 	int[][] getTabani2d();
 	
+	int[][] getTabmap2d();	
 	
-	
-	int[][] getTabmap2d();
-	
-	
-	
-	 Example getExampleById(int id) throws SQLException;
+	Example getExampleById(int id) throws SQLException;
 	 
-	 Observable getObservable();
+	Observable getObservable();
 
 
 

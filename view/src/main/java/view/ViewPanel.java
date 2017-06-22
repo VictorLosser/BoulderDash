@@ -17,15 +17,16 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import model.IModel;
+import model.MapToArray;
 
 public class ViewPanel extends JPanel implements Observer{
 
-	private ViewFrame					viewFrame;
+	private ViewFrame	viewFrame;
+	
+	private MapToArray	mapToArray;
+	
+	
 	
 	private static final long	serialVersionUID	= -998294702363713521L;
 	char[][] tabmap ;
@@ -33,21 +34,24 @@ public class ViewPanel extends JPanel implements Observer{
     Timer timer;
     int i;
     Image subSpriteHero;
-    ArrayToGraf draw = new ArrayToGraf();
-    Image maps;
-    int[][] array_map1;
-	
+    
+   
 	Image bckground_1;
+	MapToArray map1;
+	
+	int[][] array_map1;
 	
 	
+	ArrayToGraf draw = new ArrayToGraf();
     
     //int[][] spriteSheetCoords = { { 0, 0, 16, 16 }, { 16, 0, 16, 16 }, { 0, 0, 16, 16 }, {  16, 0, 16, 16 }};
 
-    public ViewPanel(final ViewFrame viewFrame) {
+    public ViewPanel(final ViewFrame viewFrame) throws IOException {
 		this.setViewFrame(viewFrame);
 		viewFrame.getModel().getObservable().addObserver(this);
-		
-		//maps = draw.getMap(this.viewFrame.getModel().getTabmap2d().getArray());
+		map1 = new MapToArray("C:/Users/Windows/git/BoulderDash/model/res/maps/map1.txt");
+		array_map1 = map1.getArray();
+		bckground_1 = draw.getMap(array_map1);
 		
 		
 
@@ -95,8 +99,9 @@ public class ViewPanel extends JPanel implements Observer{
     	graphics.clearRect(0, 0, this.getWidth(), this.getHeight());
 		graphics.setColor(Color.BLACK);
 		graphics.fillRect(0, 0, this.getWidth(), this.getHeight());
+		
         //super.paintComponent(graphics);
-        //graphics.drawImage(subSpriteHero, 0, 0, 32, 32, null);
+        graphics.drawImage(bckground_1, 0, 0, 32, 32, null);
         
        
       
@@ -107,6 +112,16 @@ public class ViewPanel extends JPanel implements Observer{
 	public void update(Observable o, Object arg) {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+	public MapToArray getMapToArray() {
+		return mapToArray;
+	}
+
+
+	public void setMapToArray(MapToArray mapToArray) {
+		this.mapToArray = mapToArray;
 	}
 }			
 	/*@Override

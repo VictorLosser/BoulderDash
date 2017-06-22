@@ -6,7 +6,9 @@ package view;
  * @version 1.0
  */
 
+import java.awt.HeadlessException;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 
 import javax.swing.SwingUtilities;
 
@@ -24,7 +26,7 @@ public class View implements IView, Runnable {
 
 	
    
-    public View(final IModel model) {
+    public View(final IModel model) throws HeadlessException, IOException {
     	
     	this.viewFrame = new ViewFrame(model);
 		SwingUtilities.invokeLater(this);

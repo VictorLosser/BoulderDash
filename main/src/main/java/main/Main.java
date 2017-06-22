@@ -2,6 +2,8 @@ package main;
 
 
 
+import java.io.IOException;
+
 import controller.Controller;
 import model.Model;
 import view.View;
@@ -19,8 +21,9 @@ public abstract class Main {
      *
      * @param args
      *            the arguments
+     * @throws IOException 
      */
-    public static void main(final String[] args) {
+    public static void main(final String[] args) throws IOException {
         
         final Model model = new Model();
         final View view = new View(model);
