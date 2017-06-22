@@ -13,10 +13,10 @@ public class KeyManager implements KeyListener {
 	}
 	
 	public void tick(){
-		up = keys[KeyEvent.VK_Z];
-		down = keys[KeyEvent.VK_S];
-		left = keys[KeyEvent.VK_Q];
-		right = keys[KeyEvent.VK_D];
+		up = keys[KeyEvent.VK_UP];
+		down = keys[KeyEvent.VK_DOWN];
+		left = keys[KeyEvent.VK_LEFT];
+		right = keys[KeyEvent.VK_RIGHT];
 		
 	}
 	

@@ -13,7 +13,7 @@ public class GameState extends State {
 	
 	public GameState(Handler handler) {
 		super(handler);
-		world = new World(handler, "C:/Users/Flenoir/git/BoulderDash/view/res/world/world1.txt");
+		world = new World(handler, "C:/Users/Windows/git/BoulderDash/view/res/world/world1.txt");
 
 		handler.setWorld(world);
 		player = new Player(handler, 100,100);
