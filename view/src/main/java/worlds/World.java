@@ -4,15 +4,18 @@ import java.awt.Graphics;
 
 import tiles.Tile;
 import utils.Utils;
+import view.View;
 
 public class World {
 
+	private View game;
 	private int width, height;
 	private int spawnX, spawnY;
 	private int[][] tiles;
 	
-	public World(String path){
+	public World(View game, String path){
 		loadWorld(path);
+		this.game = game;
 	}
 	
 	public void tick(){
@@ -22,7 +25,7 @@ public class World {
 	public void render(Graphics g){
 		for(int y=0; y< height; y++){
 			for(int x = 0; x < width; x++){
-				getTile(x,y).render(g, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT);
+				getTile(x,y).render(g, (int) (x * Tile.TILEWIDTH - game.getGameCamera().getxOffset()), (int) (y * Tile.TILEHIGHT - game.getGameCamera().getyOffset()));
 			}
 		}
 	}

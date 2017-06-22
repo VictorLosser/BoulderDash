@@ -27,7 +27,7 @@ public class Model extends Observable implements IModel {
 	
 	public Model() throws IOException{
 		
-		MapToArray map1 = new MapToArray("C:/Users/Windows/git/BoulderDash/model/res/maps/map1.txt");
+		MapToArray map1 = new MapToArray("C:/Users/victo/git/Boulder_Dash/view/res/world/world1.txt");
 			this.setTabmap2d(map1.getArray());	
 			
 	}

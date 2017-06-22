@@ -2,12 +2,16 @@ package entities;
 
 import java.awt.Graphics;
 
+import view.View;
+
 public abstract class Entity {
 
+	protected View view;
 	protected float x,y;
 	protected int width, height;
 	
-	public Entity(float x, float y, int width, int height){
+	public Entity(View view, float x, float y, int width, int height){
+		this.view = view;
 		this.x = x;
 		this.y = y;
 		this.width = width;

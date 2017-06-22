@@ -25,13 +25,10 @@ import model.IModel;
 import states.GameState;
 import states.MenuState;
 import states.State;
-
+import graphics.GameCamera;
 
 public class View implements IView, Runnable {
 	
-	
-
-
 	private Display display;
 	public int width, height;
 	public String title;
@@ -49,6 +46,9 @@ public class View implements IView, Runnable {
 	//Input
 	private KeyManager keyManager;
 	
+	//Camera
+	private GameCamera gameCamera;
+	
 	public View(String title, int width, int height){
 		this.width = width;
 		this.height = height;
@@ -63,6 +63,8 @@ public class View implements IView, Runnable {
 		display.getFrame().addKeyListener(keyManager);
 
 		Assets.init();
+		
+		gameCamera = new GameCamera(this, 0,0);
 		
 		gameState = new GameState(this);
 		menuState = new MenuState(this);
@@ -136,6 +138,18 @@ public class View implements IView, Runnable {
 	
 	public KeyManager getKeyManager(){
 		return keyManager;
+	}
+	
+	public GameCamera getGameCamera(){
+		return gameCamera;
+	}
+	
+	public int getWidth() {
+		return width;
+	}
+
+	public int getHeight() {
+		return height;
 	}
 	
 	public synchronized void start(){

@@ -11,12 +11,10 @@ public class GameState extends State {
 	private Player player;
 	private World world;
 	
-
-	
 	public GameState(View view) {
 		super(view);
 		player = new Player(view, 100,100);
-		world = new World("C:/Users/Windows/git/BoulderDash/view/res/world/world1.txt");
+		world = new World(view, "C:/Users/victo/git/Boulder_Dash/view/res/world/world1.txt");
 	}
 
 
