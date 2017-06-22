@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import view.View;
 import graphics.Assets;
 
-public class Player extends Creature{
+public class Player extends Creature{//test comment
 
 	public Player(View view, float x, float y) {
 		super(view, x, y, Creature.DEFAULT_CREATURE_HEIGHT, Creature.DEFAULT_CREATURE_WIDTH);
