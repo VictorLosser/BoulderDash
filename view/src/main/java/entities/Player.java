@@ -2,11 +2,16 @@ package entities;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 
+import graphics.Animation;
 import graphics.Assets;
 import view.Handler;
 
 public class Player extends Creature{
+	
+	private Animation down,up,left,right,staticP;
+	
 
     public Player(Handler handler, float x, float y) {
         super(handler, x, y, Creature.DEFAULT_CREATURE_HEIGHT, Creature.DEFAULT_CREATURE_WIDTH);
@@ -17,10 +22,21 @@ public class Player extends Creature{
         bounds.y = 15;
         bounds.width = 48;
         bounds.height = 50;
+        
+        down = new Animation(300, Assets.downPlayer);
+        up = new Animation(300, Assets.upPlayer);
+        left = new Animation(300, Assets.leftPlayer);
+        right = new Animation(300, Assets.rightPlayer);
+        staticP = new Animation(300, Assets.staticPlayer);
     }
 
     @Override
     public void tick() {
+    	down.tock();
+    	up.tock();
+    	left.tock();
+    	right.tock();
+    	staticP.tock();
         getInput();
         move();
         handler.getGameCamera().centerOnEntity(this);
@@ -42,12 +58,30 @@ public class Player extends Creature{
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Assets.staticPlayer, (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
+        g.drawImage(getCurrentFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
 
         /*g.setColor(Color.red);
         g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()),
                 (int) (y + bounds.y - handler.getGameCamera().getyOffset()),
                 bounds.width, bounds.height);*/
+    }
+    
+    private BufferedImage getCurrentFrame(){
+    	if(xMove < 0){
+    		return left.getCurrentFrame();
+    		
+    	}else if(xMove > 0){
+    		return right.getCurrentFrame();
+    		
+    	}else if(yMove < 0){
+    		return up.getCurrentFrame();
+    		
+    	}else if(yMove > 0){
+    		return down.getCurrentFrame();
+    	}else{
+    		return staticP.getCurrentFrame();
+    	}
+    	
     }
 
 }
