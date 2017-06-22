@@ -2,6 +2,8 @@ package states;
 
 import java.awt.Graphics;
 
+import game.Game;
+
 public abstract class State {
 
 	private static State currentState = null;

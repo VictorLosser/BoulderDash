@@ -2,6 +2,7 @@ package states;
 
 import java.awt.Graphics;
 
+import entities.Player;
 import game.Game;
 
 public class GameState extends State {
