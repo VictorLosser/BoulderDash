@@ -2,6 +2,8 @@ package states;
 
 import java.awt.Graphics;
 
+import game.Game;
+
 public class GameState extends State {
 
 	private Player player;

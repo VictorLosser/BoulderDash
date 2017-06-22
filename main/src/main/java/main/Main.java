@@ -14,7 +14,7 @@ import view.View;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public abstract class Main {
+public class Main {
 
     /**
      * The main method.
