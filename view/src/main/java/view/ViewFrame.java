@@ -22,7 +22,7 @@ import model.IModel;
  * @version 1.0
  */
 
-public class ViewFrame extends JFrame implements KeyListener {
+public class ViewFrame extends JFrame  {
 	
 	/** The model. */
 	private IModel						model;
@@ -77,13 +77,13 @@ public class ViewFrame extends JFrame implements KeyListener {
 		this.setModel(model);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
-		this.addKeyListener(this);
+		//this.addKeyListener(this);
 		this.setContentPane(new ViewPanel(this));
 		this.setSize(500, 500);
 		this.setLocationRelativeTo(null);
 	}
 
-	@Override
+	/*@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
@@ -99,7 +99,7 @@ public class ViewFrame extends JFrame implements KeyListener {
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 
 	public void printMessage(final String message) {
 		JOptionPane.showMessageDialog(null, message);

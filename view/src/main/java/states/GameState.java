@@ -3,7 +3,7 @@ package states;
 import java.awt.Graphics;
 
 import entities.Player;
-import game.Game;
+import view.View;
 import worlds.World;
 
 public class GameState extends State {
@@ -11,13 +11,15 @@ public class GameState extends State {
 	private Player player;
 	private World world;
 	
-	public GameState(Game game){
-		super(game);
-		player = new Player(game, 100,100);
-		world = new World("res/world/world1.txt");
+
+	
+	public GameState(View view) {
+		super(view);
+		player = new Player(view, 100,100);
+		world = new World("C:/Users/Windows/git/BoulderDash/view/res/world/world1.txt");
 	}
-	
-	
+
+
 	@Override
 	public void tick() {
 		world.tick();

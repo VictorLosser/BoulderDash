@@ -2,7 +2,7 @@ package states;
 
 import java.awt.Graphics;
 
-import game.Game;
+import view.View;;
 
 public abstract class State {
 
@@ -16,10 +16,10 @@ public abstract class State {
 		return currentState;
 	}
 	
-	protected Game game;
+	protected View view;
 	
-	public State(Game game){
-		this.game = game;
+	public State(View view){
+		this.view = view;
 	}
 	
 	public abstract void tick();

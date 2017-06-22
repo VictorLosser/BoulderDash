@@ -26,10 +26,11 @@ public class Main {
     public static void main(final String[] args) throws IOException {
         
         final Model model = new Model();
-        final View view = new View(model);
+        final View view = new View("Title !", 1000, 1000);
+        view.start();
+        
         final Controller controller = new Controller(view, model);
-        view.setController(controller);
-		controller.control();
+        
 		
 		
         /*try {

@@ -2,16 +2,16 @@ package entities;
 
 import java.awt.Graphics;
 
-import game.Game;
+import view.View;
 import graphics.Assets;
 
 public class Player extends Creature{
 
-	private Game game;
+	private View view;
 	
-	public Player(Game game, float x, float y) {
+	public Player(View view, float x, float y) {
 		super(x, y, Creature.DEFAULT_CREATURE_HEIGHT, Creature.DEFAULT_CREATURE_WIDTH);
-		this.game = game;
+		this.view = view;
 	}
 
 	@Override
@@ -24,13 +24,13 @@ public class Player extends Creature{
 		xMove = 0;
 		yMove = 0;
 		
-		if(game.getKeyManager().up)
+		if(view.getKeyManager().up)
 			yMove = -speed;
-		if(game.getKeyManager().down)
+		if(view.getKeyManager().down)
 			yMove = speed;
-		if(game.getKeyManager().left)
+		if(view.getKeyManager().left)
 			xMove = -speed;
-		if(game.getKeyManager().right)
+		if(view.getKeyManager().right)
 			xMove = speed;
 	}
 	
