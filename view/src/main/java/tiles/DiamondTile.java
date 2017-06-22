@@ -8,8 +8,4 @@ public class DiamondTile extends Tile {
 		super(Assets.diamond, id);
 	}
 
-	@Override
-	public boolean isSolid(){
-		return true;
-	}
 }

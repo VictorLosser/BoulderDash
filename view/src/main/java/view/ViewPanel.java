@@ -18,7 +18,6 @@ import java.util.Observer;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.JPanel;
-import model.MapToArray;
 
 public class ViewPanel extends JPanel implements Observer{
 
@@ -38,26 +37,17 @@ public class ViewPanel extends JPanel implements Observer{
    
 	Image bckground_1;
 	Image background;
-	MapToArray map1;
 	
 	int[][] array_map1;
 	
 	
-	ArrayToGraf draw = new ArrayToGraf();
     
     //int[][] spriteSheetCoords = { { 0, 0, 16, 16 }, { 16, 0, 16, 16 }, { 0, 0, 16, 16 }, {  16, 0, 16, 16 }};
 
     public ViewPanel(final ViewFrame viewFrame) throws IOException {
 		this.setViewFrame(viewFrame);
 		
-		map1 = new MapToArray("C:/Users/Windows/git/BoulderDash/maps/map1.txt");
-		
-		array_map1 = map1.getArray();
-		background = draw.getMap(array_map1);
-		
-		
-
-		
+	
 	
 		/*this.spriteSheetCoords = */
 		

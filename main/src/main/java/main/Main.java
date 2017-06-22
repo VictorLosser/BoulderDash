@@ -29,7 +29,7 @@ public class Main {
         final View view = new View("Title !", 1000, 1000);
         view.start();
         
-        final Controller controller = new Controller(view, model);
+        //final Controller controller = new Controller(view, model);
         
 		
 		
