@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import entities.Player;
 import game.Game;
+import worlds.World;
 
 public class GameState extends State {
 
