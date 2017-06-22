@@ -1,104 +1,93 @@
 package view;
-/**
- * <h1>The Classe View.</h1>
- * 
- * @author Florian PFEIFER florian.pfeifer@viacesi.fr
- * @version 1.0
- */
 
+import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.HeadlessException;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
-import java.io.IOException;
+import java.awt.image.BufferedImage;
 
-import javax.swing.SwingUtilities;
-
-
-import controller.IController;
-import controller.IUserOrder;
-import controller.KeyOrdercraft;
 import display.Display;
 import graphics.Assets;
+import graphics.GameCamera;
 import input.KeyManager;
-import model.IModel;
 import states.GameState;
 import states.MenuState;
 import states.State;
-import graphics.GameCamera;
 
-public class View implements IView, Runnable {
-	
-	private Display display;
-	public int width, height;
-	public String title;
-	
-	private boolean running = false;
-	private Thread thread;
-	
-	private BufferStrategy bs;
-	private Graphics g;
-	
-	//States
-	private State gameState;
-	private State menuState;
-	
-	//Input
-	private KeyManager keyManager;
-	
-	//Camera
-	private GameCamera gameCamera;
-	
-	public View(String title, int width, int height){
-		this.width = width;
-		this.height = height;
-		this.title = title;
-		keyManager = new KeyManager();
-		
-	}
+public class View implements Runnable { //This class will put something on the created frame
 
-	private void init() {
+    private Display display;
+    public int width, height;
+    public String title;
 
-		display = new Display(title, width, height);
-		display.getFrame().addKeyListener(keyManager);
+    private boolean running = false;
+    private Thread thread;
 
-		Assets.init();
-		
-		gameCamera = new GameCamera(this, 0,0);
-		
-		gameState = new GameState(this);
-		menuState = new MenuState(this);
-		State.setState(gameState);
-	}
-	
-	
-	private void tick() {
-		keyManager.tick();
-		
-		if(State.getState() != null)
-			State.getState().tick();
-	}
-	
-	private void render() {
-		bs = display.getCanvas().getBufferStrategy();
-		if(bs == null){
-			display.getCanvas().createBufferStrategy(3);
-			return;
-		}
-		g = bs.getDrawGraphics();
-		//Clear Screen
-		g.clearRect(0, 0, width, height);
-		//Draw Here !
-		
-		if(State.getState() != null)
-			State.getState().render(g);
-		
-		
-		//End Drawing !
-		bs.show();
-		g.dispose();
-		
-	}
+    private BufferStrategy bs;
+    private Graphics g;
+
+    //States
+    private State gameState;
+    private State menuState;
+
+    //Input
+    private KeyManager keyManager;
+
+    //Camera
+    private GameCamera gameCamera;
+
+    //Handler
+    private Handler handler;
+
+    public View(String title, int width, int height){
+        this.width = width;
+        this.height = height;
+        this.title = title;
+        keyManager = new KeyManager();
+    }
+
+    private void init() {
+
+        display = new Display(title, width, height);
+        display.getFrame().addKeyListener(keyManager);
+
+        Assets.init();
+
+        gameCamera = new GameCamera(this, 0,0);
+        handler = new Handler(this);
+
+        gameState = new GameState(handler);
+        menuState = new MenuState(handler);
+        State.setState(gameState);
+    }
+
+
+    private void tick() {
+        keyManager.tick();
+
+        if(State.getState() != null)
+            State.getState().tick();
+    }
+
+    private void render() {
+        bs = display.getCanvas().getBufferStrategy();
+        if(bs == null){
+            display.getCanvas().createBufferStrategy(3);
+            return;
+        }
+        g = bs.getDrawGraphics();
+        //Clear Screen
+        g.clearRect(0, 0, width, height);
+        //Draw Here !
+
+        if(State.getState() != null)
+            State.getState().render(g);
+
+
+        //End Drawing !
+        bs.show();
+        g.dispose();
+
+    }
 	
 	@Override
 	public void run() {
@@ -172,65 +161,4 @@ public class View implements IView, Runnable {
 		}
 		
 	}
-
-	@Override
-	public void printMessage(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
-   
-    /*public View(final IModel model) throws HeadlessException, IOException {
-    	
-    	this.viewFrame = new ViewFrame(model);
-		SwingUtilities.invokeLater(this);
-	}
-    
-    
-    
-
-
-	static KeyOrdercraft keyCodeToControllerOrder(final int keyCode) {
-		IUserOrder userOrder;
-		switch (keyCode) {
-			case KeyEvent.VK_UP:
-				return KeyOrdercraft.MoveUp;
-		case KeyEvent.VK_RIGHT:
-				return KeyOrdercraft.MoveRight;
-		case KeyEvent.VK_DOWN:
-				return KeyOrdercraft.MoveDown;
-		case KeyEvent.VK_LEFT:
-				return KeyOrdercraft.MoveLeft;
-		default:
-				userOrder = null;
-		}
-		return null;
-		
-	}
-	
-	public void run() {
-		this.viewFrame.setVisible(true);
-		
-	}
-
-
-
-
-
-	public void setController(final IController controller) {
-		this.viewFrame.setController(controller);
-		
-	}
-
-
-
-
-
-	@Override
-	public void printMessage(final String message) {
-		this.viewFrame.printMessage(message);
-	}*/
-	
-
 }

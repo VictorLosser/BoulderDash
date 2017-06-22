@@ -2,12 +2,12 @@ package states;
 
 import java.awt.Graphics;
 
-import view.View;
+import view.Handler;
 
 public class MenuState extends State {
 
-	public MenuState(View view){
-		super(view);
+	public MenuState(Handler handler){
+		super(handler);
 	}
 	
 	@Override

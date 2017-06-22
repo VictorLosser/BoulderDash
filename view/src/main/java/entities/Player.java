@@ -1,47 +1,53 @@
 package entities;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
-import view.View;
 import graphics.Assets;
+import view.Handler;
 
-public class Player extends Creature{//test comment
+public class Player extends Creature{
 
-	public Player(View view, float x, float y) {
-		super(view, x, y, Creature.DEFAULT_CREATURE_HEIGHT, Creature.DEFAULT_CREATURE_WIDTH);
-	}
+    public Player(Handler handler, float x, float y) {
+        super(handler, x, y, Creature.DEFAULT_CREATURE_HEIGHT, Creature.DEFAULT_CREATURE_WIDTH);
 
-	@Override
-	public void tick() {
-		getInput();
-		move();
-		view.getGameCamera().centerOnEntity(this);
+        //These variables will size the rectangle that will be in collision with an object
+        //If we don't define these variables, it will be full size by default
+        bounds.x = 10;
+        bounds.y = 10;
+        bounds.width = 40;
+        bounds.height = 40;
+    }
 
-	}
+    @Override
+    public void tick() {
+        getInput();
+        move();
+        handler.getGameCamera().centerOnEntity(this);
+    }
 
-	private void getInput(){
-		xMove = 0;
-		yMove = 0;
-		
-		if(view.getKeyManager().up)
-			yMove = -speed;
-		if(view.getKeyManager().down)
-			yMove = speed;
-		if(view.getKeyManager().left)
-			xMove = -speed;
-		if(view.getKeyManager().right)
-			xMove = speed;
-	}
-	
-	@Override
-	public void render(Graphics g) {
-		g.drawImage(Assets.staticPlayer, (int) (x - view.getGameCamera().getxOffset()), (int) (y - view.getGameCamera().getyOffset()), width, height, null);
-	}
-	//condition no contact between objects and player
-    //public boolean contactBefore(Object object){
-        //if(this.x + this.width < object.getX() || this.x + this.tilelenght > object.getX() +5 || this.y + this.height <= object.getY() || this.y >= object.getY() + object.getHeight())
-        //    {return false;}
-        //else
-            //{return true;}
-    //}
+    private void getInput(){
+        xMove = 0;
+        yMove = 0;
+
+        if(handler.getKeyManager().up)
+            yMove = -speed;
+        if(handler.getKeyManager().down)
+            yMove = speed;
+        if(handler.getKeyManager().left)
+            xMove = -speed;
+        if(handler.getKeyManager().right)
+            xMove = speed;
+    }
+
+    @Override
+    public void render(Graphics g) {
+        g.drawImage(Assets.staticPlayer, (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
+
+        g.setColor(Color.red);
+        g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()),
+                (int) (y + bounds.y - handler.getGameCamera().getyOffset()),
+                bounds.width, bounds.height);
+    }
+
 }

@@ -3,7 +3,7 @@ package states;
 import java.awt.Graphics;
 
 import entities.Player;
-import view.View;
+import view.Handler;
 import worlds.World;
 
 public class GameState extends State {
@@ -11,10 +11,12 @@ public class GameState extends State {
 	private Player player;
 	private World world;
 	
-	public GameState(View view) {
-		super(view);
-		player = new Player(view, 100,100);
-		world = new World(view, "C:/Users/victo/git/Boulder_Dash/view/res/world/world1.txt");
+	public GameState(Handler handler) {
+		super(handler);
+		world = new World(handler, "C:/Users/victo/git/Boulder_Dash/view/res/world/world1.txt");
+
+		handler.setWorld(world);
+		player = new Player(handler, 100,100);
 	}
 
 
