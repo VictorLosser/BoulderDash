@@ -5,11 +5,6 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
-
-import entities.Player;
-import entities.motionless.Diamond;
-import entities.motionless.Ground;
-import mapdao.IState;
 import mapdao.IWorld;
 import mapdao.Map;
 import mapdao.MapDAO;

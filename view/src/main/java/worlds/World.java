@@ -1,15 +1,9 @@
 package worlds;
 
 import java.awt.Graphics;
-import java.sql.SQLException;
-
-import javax.swing.JOptionPane;
 
 import entities.EntityManager;
 import entities.Player;
-import mapdao.IWorld;
-import mapdao.Map;
-import mapdao.MapDAO;
 import tiles.Tile;
 import utils.Utils;
 import view.Handler;
