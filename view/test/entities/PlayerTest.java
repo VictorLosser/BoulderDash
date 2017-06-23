@@ -42,8 +42,6 @@ public class PlayerTest extends CreatureTest {
 	@Test
 	public void testGetxMove() throws Exception{
 		final float expected = 0.0f;
-		final float xMove = creature.getxMove();
-		System.out.println(xMove);
-		assertEquals(expected, xMove, 0.0);
+		assertEquals(expected, creature.getxMove(), 0.0);
 	}
 }
