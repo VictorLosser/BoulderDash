@@ -1,7 +1,9 @@
 package view;
 
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.awt.Graphics2D;
 
 import java.awt.image.BufferedImage;
 import java.sql.SQLException;
@@ -10,6 +12,7 @@ import javax.swing.JOptionPane;
 
 
 import display.Display;
+import game_ui.Score;
 import graphics.Assets;
 import graphics.GameCamera;
 import input.KeyManager;
@@ -21,7 +24,9 @@ import states.GameState;
 import states.MenuState;
 import states.State;
 
-public class View implements Runnable { //This class will put something on the created frame
+	//This class will put something on the created frame
+
+public class View implements Runnable { 
 
 	
 	
@@ -189,7 +194,52 @@ public class View implements Runnable { //This class will put something on the c
 		}
 
 	
-			
+	
+	/*
+	
+	//TESTING SCORES 
+	
+	private Score score;
+	private Font police;
+	
+	
+	
+	public View() {
+		
+		super();
+		
+		score = new Score();
+		police = new Font ("Arial", Font.PLAIN, 18);
+	}
+	
+	
+	
+	
+	public void paintComponent(Graphics g) {
+ 		Graphics g2 = (Graphics2D) g;
+ 		super.paintComponent(g);
+ 		
+ 		
+ 		
+		
+ 		// Detection between player and diamond
+ 		
+ 	 		for(int i = 0; i < this.tabDiamond.size(); i++){
+ 	 			if(this.player.proche(this.tabDiamond.get(i))){
+ 	 				if(this.player.contactPiece(this.tabDiamond.get(i))){
+ 	 					this.tabDiamond.remove(i);
+ 	 					this.score.setNumber_diamond(this.score.getNumber_diamond() + 1);
+ 	 				}
+ 	 			}
+ 	 		}
+ 		
+ 	 		
+ 		g2.setFont (police);
+ 		g2.drawString(this.score.getNumber_diamond() + " Diamonds found in " + this.score.getTotal_number_diamond(), 500, 50);
+	}
+
+
+	*/
 	
 	
 }

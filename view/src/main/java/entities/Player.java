@@ -111,7 +111,7 @@ public class Player extends Creature{
                 bounds.width, bounds.height);*/
     }
     
-    private BufferedImage getCurrentFrame(){ //This method return the image corresponding to the movement
+    public BufferedImage getCurrentFrame(){ //This method return the image corresponding to the movement
     	if(xMove < 0){
     		return left.getCurrentFrame();
     		

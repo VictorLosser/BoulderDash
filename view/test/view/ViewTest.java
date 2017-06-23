@@ -10,6 +10,8 @@ import org.junit.Test;
 
 public class ViewTest {
 
+	private View view;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -20,6 +22,7 @@ public class ViewTest {
 
 	@Before
 	public void setUp() throws Exception {
+		view = new View("oui", 1, 2);
 	}
 
 	@After
@@ -27,8 +30,15 @@ public class ViewTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testGetHeight(){
+		final int expected = 2;
+		assertEquals(expected, view.getHeight());
+	}
+	
+	@Test
+	public void testGetWidth(){
+		final int expected = 1;
+		assertEquals(expected, view.getWidth());
 	}
 
 }
