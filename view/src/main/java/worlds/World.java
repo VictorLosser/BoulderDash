@@ -1,14 +1,20 @@
 package worlds;
 
 import java.awt.Graphics;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
 
 import entities.EntityManager;
 import entities.Player;
+import mapdao.IWorld;
+import mapdao.Map;
+import mapdao.MapDAO;
 import tiles.Tile;
 import utils.Utils;
 import view.Handler;
 
-public class World {
+public class World  {
 
     private Handler handler;
     private int width, height;
@@ -17,10 +23,10 @@ public class World {
     
     private EntityManager entityManager;
 
-    public World(Handler handler, String path){
+    public World(Handler handler, String message){
         this.handler = handler;
         entityManager = new EntityManager(handler, new Player(handler, 100, 100));
-        loadWorld(path);
+        loadWorld(message);
         entityManager.getPlayer().setX(spawnX);
         entityManager.getPlayer().setY(spawnY);
     }
@@ -58,8 +64,8 @@ public class World {
         return t;
     }
 
-    private void loadWorld(String path){
-        String file = Utils.loadFileAsString(path);
+    private void loadWorld(String message){
+        String file = message;
         String[] tokens = file.split("\\s+");
         width = Utils.parseInt(tokens[0]);
         height = Utils.parseInt(tokens[1]);
@@ -81,5 +87,9 @@ public class World {
     public int getWidth(){
     	return width;
     }
+
+	
+	
+	
 
 }

@@ -3,16 +3,30 @@ package view;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
+import java.awt.image.BufferedImage;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
+
 import display.Display;
 import graphics.Assets;
 import graphics.GameCamera;
 import input.KeyManager;
+import mapdao.IState;
+import mapdao.IWorld;
+import mapdao.Map;
+import mapdao.MapDAO;
 import states.GameState;
 import states.MenuState;
 import states.State;
 
 public class View implements Runnable { //This class will put something on the created frame
 
+	
+	
+
+	
     private Display display;
     public int width, height;
     public String title;
@@ -40,10 +54,13 @@ public class View implements Runnable { //This class will put something on the c
         this.width = width;
         this.height = height;
         this.title = title;
+        
         keyManager = new KeyManager();
     }
+    
+    
 
-    private void init() {
+    private void init() throws SQLException {
 
         display = new Display(title, width, height);
         display.getFrame().addKeyListener(keyManager);
@@ -90,7 +107,12 @@ public class View implements Runnable { //This class will put something on the c
 	@Override
 	public void run() {
 
-		init();
+		try {
+			init();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		int fps = 60;
 		double timePerTick = 1000000000 / fps;
@@ -139,24 +161,35 @@ public class View implements Runnable { //This class will put something on the c
 		return height;
 	}
 	
-	public synchronized void start(){
+	
+	public synchronized void start() throws SQLException{
+		
+		
 		if(running)
 			return;
 		
 		running = true;
 		thread = new Thread(this);
 		thread.start();
+		
 	}
 	
 	public synchronized void stop(){
+		
 		if(!running)
 			return;
 		running = false;
-		try {
-			thread.join();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 		
-	}
+			try {
+				thread.join();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+	
+			
+	
+	
 }

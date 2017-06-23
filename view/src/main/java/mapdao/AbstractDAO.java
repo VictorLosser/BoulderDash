@@ -1,4 +1,4 @@
-package model.dao;
+package mapdao;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;

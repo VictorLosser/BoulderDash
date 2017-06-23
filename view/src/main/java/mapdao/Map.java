@@ -1,14 +1,9 @@
-package model;
+package mapdao;
 
-/**
- * <h1>The Class Example.</h1>
- *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
- */
-public class Example {
+public class Map {
 
-    /** The id. */
+	
+	/** The id. */
     private final int id;
 
     /** The name. */
@@ -22,7 +17,7 @@ public class Example {
      * @param name
      *            the name
      */
-    public Example(final int id, final String name) {
+    public Map(final int id, final String name) {
         super();
         this.id = id;
         this.name = name;
@@ -56,9 +51,8 @@ public class Example {
         this.name = name;
     }
 
-    /*
-     * (non-Javadoc)
-     * @see java.lang.Object#toString()
-     */
-    
+    @Override
+    public String toString() {
+        return this.getName();
+    }
 }
