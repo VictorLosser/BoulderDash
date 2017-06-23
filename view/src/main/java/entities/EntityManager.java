@@ -3,14 +3,12 @@ package entities;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
-import entities.motionless.Diamond;
 import view.Handler;
 
 public class EntityManager {
 	
-	Handler handler;
-	Player player;
-	
+	private Handler handler;
+	private Player player;
 	private ArrayList<Entity> entities;
 
 	public EntityManager(Handler handler, Player player){
@@ -37,7 +35,9 @@ public class EntityManager {
 		entities.add(e);
 	}
 	
-// Getters Setters
+	
+    /*/GETTERS AND SETTERS/*/
+	
 	public Handler getHandler() {
 		return handler;
 	}

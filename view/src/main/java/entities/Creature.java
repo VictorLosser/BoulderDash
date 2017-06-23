@@ -6,7 +6,6 @@ import view.Handler;
 public abstract class Creature extends Entity{
 
 	public static final int DEFAULT_HEALTH = 10;
-
 	
 	public static final float DEFAULT_SPEED = 8.0f;
 
@@ -29,7 +28,7 @@ public abstract class Creature extends Entity{
         moveY();
     }
 
-    public void moveX(){
+    public void moveX(){ //Method to move on the x axis
         if(xMove > 0){//Moving right
             int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
 
@@ -51,7 +50,7 @@ public abstract class Creature extends Entity{
         }
     }
 
-    public void moveY(){
+    public void moveY(){ //Method to move on the y axis
         if(yMove < 0){//Up
             int ty = (int) (y + yMove + bounds.y) / Tile.TILEHIGHT;
 
@@ -73,10 +72,12 @@ public abstract class Creature extends Entity{
         }
     }
 
-    protected boolean collisionWithTile(int x, int y){
+    protected boolean collisionWithTile(int x, int y){ //This method verify if the entity is solid
         return handler.getWorld().getTile(x, y).isSolid();
     }
-	//GETTERS AND SETTERS
+    
+    
+    /*/GETTERS AND SETTERS/*/
 	
 	public float getxMove() {
 		return xMove;

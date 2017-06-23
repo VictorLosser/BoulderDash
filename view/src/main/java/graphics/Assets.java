@@ -2,7 +2,8 @@ package graphics;
 
 import java.awt.image.BufferedImage;
 
-public class Assets {//This class will load all images from the sprite and assign it to a variable
+/*---THIS CLASS WILL LOAD ALL IMAGES FROM THE SPRITE AND ASSIGN IT TO A VARIABLE---*/
+public class Assets {
 
 	public static final int width = 16, height = 16;
 	

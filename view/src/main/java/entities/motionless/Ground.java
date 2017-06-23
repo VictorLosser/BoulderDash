@@ -6,16 +6,15 @@ import graphics.Assets;
 import tiles.Tile;
 import view.Handler;
 
-public class Ground extends MotionlessEntity{
+/*---THIS CLASS DEFINE THE OBJECT GROUND WHICH IS A FULL BLOCK OF SOIL---*/
+public class Ground extends MotionlessEntity{//The ground don't move so it extends MotionlessEntity
 
 	public Ground(Handler handler, float x, float y, int width, int height) {
 		super(handler, x, y,  Tile.TILEWIDTH, Tile.TILEHIGHT);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
 		
 	}
 
