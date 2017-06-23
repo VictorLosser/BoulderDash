@@ -2,20 +2,16 @@ package entities;
 
 import static org.junit.Assert.*;
 
-import java.awt.image.BufferedImage;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import graphics.Assets;
 import view.Handler;
 
 public class PlayerTest extends CreatureTest {
 
-	private Player player;
 	private Creature creature;
 
 	
