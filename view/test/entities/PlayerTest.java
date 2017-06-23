@@ -31,25 +31,19 @@ public class PlayerTest extends CreatureTest {
 	public void setUp() throws Exception {
 		Handler handler = null;
 		this.creature = new Player(handler, 0.0f,0.0f);
-		
 
-		
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	public void testGetxMove() throws Exception{
-		super.testGetxMove();
-		final float expected = 0;
-		final float xMove = this.creature.getxMove();
-		assertEquals(expected, xMove);
+		final float expected = 0.0f;
+		final float xMove = creature.getxMove();
+		System.out.println(xMove);
+		assertEquals(expected, xMove, 0.0);
 	}
 }

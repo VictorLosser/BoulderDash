@@ -28,15 +28,10 @@ public class CreatureTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
 	
 	@Test
 	public void testGetxMove() throws Exception{
-		assertNotNull(this.creature.getxMove());
+		this.creature.getxMove();
 	}
 
 }
