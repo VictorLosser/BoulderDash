@@ -1,9 +1,13 @@
 package entities;
 
 import java.awt.Color;
+import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import graphics.Animation;
 import graphics.Assets;
@@ -48,12 +52,25 @@ public class Player extends Creature{
     private void checkTouch(){
     	Rectangle cb = getCollisionBounds(0,0);
     	Rectangle ar = new Rectangle();
-    	int arSize = 32;
+    	int arSize = 8;
     	ar.width = arSize;
     	ar.height = arSize;
     	
-    	
-    	if(handler.getKeyManager().up){
+    	if(handler.getKeyManager().dup){
+    		ar.x = cb.x+ cb.width / 2 - arSize / 2;
+    		ar.y = cb.y - arSize;
+    	}else if(handler.getKeyManager().ddown){
+        		ar.x = cb.x + cb.width / 2 -arSize / 2;
+        		ar.y = cb.y + cb.height;
+    	}else if(handler.getKeyManager().dleft){
+            		ar.x = cb.x - arSize;
+            		ar.y = cb.y+ cb.height / 2 -arSize /2;
+        		
+        }else if(handler.getKeyManager().dright){
+                		ar.x = cb.x + cb.width;
+                		ar.y = cb.y + cb.height / 2 -arSize /2 ;
+            		
+        }else if(handler.getKeyManager().up){
     		ar.x = cb.x+ cb.width / 2 - arSize / 2;
     		ar.y = cb.y - arSize;
     	}else if(handler.getKeyManager().down){
@@ -71,9 +88,14 @@ public class Player extends Creature{
         	return;
         }
     	
+    	
+    	
+    	
+    	
     		for(Entity e : handler.getWorld().getEntityManager().getEntities()){
     			if(e.equals(this))
     				continue;
+    			
     			if(e.getCollisionBounds(0, 0).intersects(ar)){
     				e.touch(1);
     				return;
@@ -85,6 +107,8 @@ public class Player extends Creature{
     @Override
     public void die(){
     	System.out.println("You Died");
+    	JOptionPane.showMessageDialog(null, "You Died");
+    	System.exit(0);
     }
     private void getInput(){
         xMove = 0;

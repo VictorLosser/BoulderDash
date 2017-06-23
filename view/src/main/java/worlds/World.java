@@ -2,15 +2,14 @@ package worlds;
 
 import java.awt.Graphics;
 
+import entities.Boulder;
 import entities.EntityManager;
 import entities.Player;
-<<<<<<< HEAD
+
 import entities.motionless.Ground;
-import mapdao.IWorld;
-import mapdao.Map;
-import mapdao.MapDAO;
-=======
->>>>>>> branch 'master' of https://github.com/VictorLosser/BoulderDash.git
+
+
+
 import tiles.Tile;
 import utils.Utils;
 import view.Handler;
@@ -26,7 +25,8 @@ public class World  {
 
     public World(Handler handler, String message){
         this.handler = handler;
-        entityManager = new EntityManager(handler, new Player(handler, 100, 100));
+        entityManager = new EntityManager(handler, new Player(handler, 5555, 100));
+       // entityManager = new EntityManager(handler, new Boulder(handler, 100, 100));
         //entityManager.addEntity(new Ground(handler, 200, 200));
         loadWorld(message);
         entityManager.getPlayer().setX(spawnX);
@@ -79,6 +79,8 @@ public class World  {
             for(int x = 0; x < width; x++){
                 tiles[x][y] = Utils.parseInt(tokens[(x+y*width) + 4]);
                 if (tiles[x][y] == 0) { entityManager.addEntity(new Ground(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
+               if (tiles[x][y] == 3) {entityManager.addCreature( new Boulder(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
+                
             }
         }
     }

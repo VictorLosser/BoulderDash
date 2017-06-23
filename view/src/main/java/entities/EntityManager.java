@@ -10,6 +10,7 @@ public class EntityManager {
 	
 	private Handler handler;
 	private Player player;
+	private ArrayList<Entity> creature;
 	private ArrayList<Entity> entities;
 	private Comparator<Entity> sorter = new Comparator<Entity>(){
 		@Override
@@ -23,10 +24,15 @@ public class EntityManager {
 	public EntityManager(Handler handler, Player player){
 		this.handler = handler;
 		this.player = player;
+		creature = new ArrayList<Entity>();
 		entities = new ArrayList<Entity>();
 		addEntity(player);
+		addCreature(player);
 	}
 	
+
+
+
 	public void tick(){
 		for(int i = 0; i < entities.size(); i++){
 			Entity e = entities.get(i);
@@ -35,21 +41,51 @@ public class EntityManager {
 				entities.remove(e);
 		}
 		entities.sort(sorter);
+		for(int i = 0; i < creature.size(); i++){
+			Entity c = creature.get(i);
+			c.tick();
+			/*if(!c.isActive())
+				entities.remove(c);*/
+		}
 	}
+		
 	
 	public void render(Graphics g){
 		for(Entity e : entities){
 		e.render(g);
+		}
+		for(Entity c : creature){
+		c.render(g);
 		}
 	}
 	
 	public void addEntity(Entity e){
 		entities.add(e);
 	}
+	public void addCreature(Entity c){
+		creature.add(c);
+	}
+	
 	
 	
     /*/GETTERS AND SETTERS/*/
 	
+	
+	
+	public ArrayList<Entity> getCreature() {
+		return creature;
+	}
+
+
+
+
+	public void setCreature(ArrayList<Entity> creature) {
+		this.creature = creature;
+	}
+
+
+
+
 	public Handler getHandler() {
 		return handler;
 	}

@@ -11,7 +11,7 @@ public class Tile {
 	//public static Tile groundTile = new GroundTile(0);
 	public static Tile noneTile = new NoneTile(4);
 	public static Tile wallTile = new WallTile(1);
-	public static Tile boulderTile = new BoulderTile(3);
+	//public static Tile boulderTile = new BoulderTile(3);
 	public static Tile diamondTile = new DiamondTile(7);
 	
 	//CLASS

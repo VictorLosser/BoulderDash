@@ -64,6 +64,16 @@ public abstract class Entity {
     		return false;
     	}
     
+    public boolean checkCreatureCollision(float xOffset, float yOffset){
+    	for(Entity c : handler.getWorld().getEntityManager().getCreature()){
+    		if(c.equals(this))
+    			continue;
+    		if(c.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset)))
+    			return true;
+    		}
+    		return false;
+    }
+    
     
     public Rectangle getCollisionBounds(float xOffset, float yOffset){
     	return new Rectangle((int) (x + bounds.x + xOffset), (int) (y + bounds.y + yOffset), bounds.width, bounds.height);
