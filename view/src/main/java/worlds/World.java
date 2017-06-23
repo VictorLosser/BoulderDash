@@ -44,7 +44,11 @@ public class World {
         entityManager.render(g);
     }
 
-    public Tile getTile(int x, int y){
+    public EntityManager getEntityManager() {
+		return entityManager;
+	}
+
+	public Tile getTile(int x, int y){
         if(x < 0 || y < 0 || x >= width || y >= height)
             return Tile.noneTile;
 
