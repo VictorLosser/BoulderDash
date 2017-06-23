@@ -3,7 +3,8 @@ package input;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class KeyManager implements KeyListener {
+/*---THIS CLASS IS HERE TO MANAGE OUR KEYBOARD---*/
+public class KeyManager implements KeyListener {//We have to implements the KeyListener to access to our keyboard
 
 	private boolean[] keys;
 	public boolean up, down, left, right;

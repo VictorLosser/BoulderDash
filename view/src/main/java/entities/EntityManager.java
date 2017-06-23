@@ -35,7 +35,9 @@ public class EntityManager {
 		entities.add(e);
 	}
 	
-// Getters Setters
+	
+    /*/GETTERS AND SETTERS/*/
+	
 	public Handler getHandler() {
 		return handler;
 	}
