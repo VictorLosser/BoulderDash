@@ -22,6 +22,7 @@ public class Player extends Creature{
         bounds.width = 48;
         bounds.height = 50;
         
+        //Here we attribute the image corresponding to the movement variable
         down = new Animation(300, Assets.downPlayer);
         up = new Animation(300, Assets.upPlayer);
         left = new Animation(300, Assets.leftPlayer);
@@ -45,6 +46,7 @@ public class Player extends Creature{
         xMove = 0;
         yMove = 0;
 
+        //Here we apply the movement corresponding to the keyboard input
         if(handler.getKeyManager().up)
             yMove = -speed;
         if(handler.getKeyManager().down)
@@ -65,7 +67,7 @@ public class Player extends Creature{
                 bounds.width, bounds.height);*/
     }
     
-    private BufferedImage getCurrentFrame(){
+    private BufferedImage getCurrentFrame(){ //This method return the image corresponding to the movement
     	if(xMove < 0){
     		return left.getCurrentFrame();
     		
