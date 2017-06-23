@@ -5,8 +5,6 @@ package main;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import controller.Controller;
-import model.Model;
 import view.View;
 
 /**
