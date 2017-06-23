@@ -1,4 +1,4 @@
-package view;
+package entities;
 
 import static org.junit.Assert.*;
 
@@ -8,9 +8,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ViewTest {
+public class CreatureTest {
 
-	private View view;
+	private Creature creature;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -22,7 +22,7 @@ public class ViewTest {
 
 	@Before
 	public void setUp() throws Exception {
-		view = new View("oui", 1, 2);
+		
 	}
 
 	@After
@@ -30,15 +30,13 @@ public class ViewTest {
 	}
 
 	@Test
-	public void testGetHeight(){
-		final int expected = 2;
-		assertEquals(expected, view.getHeight());
+	public void test() {
+		fail("Not yet implemented");
 	}
 	
 	@Test
-	public void testGetWidth(){
-		final int expected = 1;
-		assertEquals(expected, view.getWidth());
+	public void testGetxMove() throws Exception{
+		assertNotNull(this.creature.getxMove());
 	}
 
 }

@@ -1,4 +1,4 @@
-package view;
+package worlds;
 
 import static org.junit.Assert.*;
 
@@ -8,9 +8,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ViewTest {
+import view.Handler;
 
-	private View view;
+public class WorldTest {
+
+	private World world;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -22,7 +24,10 @@ public class ViewTest {
 
 	@Before
 	public void setUp() throws Exception {
-		view = new View("oui", 1, 2);
+		
+		Handler handler = null;
+		String path = null;
+		world = new World(handler,path);
 	}
 
 	@After
@@ -30,15 +35,8 @@ public class ViewTest {
 	}
 
 	@Test
-	public void testGetHeight(){
-		final int expected = 2;
-		assertEquals(expected, view.getHeight());
-	}
-	
-	@Test
-	public void testGetWidth(){
-		final int expected = 1;
-		assertEquals(expected, view.getWidth());
+	public void test() {
+		fail("Not yet implemented");
 	}
 
 }
