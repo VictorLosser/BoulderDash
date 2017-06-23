@@ -195,8 +195,8 @@ public class View implements Runnable {
 
 	
 	
+	/*
 	
-/*	
 	//TESTING SCORES 
 	
 	private Score score;
@@ -235,11 +235,11 @@ public class View implements Runnable {
  		
  	 		
  		g2.setFont (police);
- 		g2.drawString(this.score.getNumber_diamond() + " pièce(s) trouvée(s) sur " + this.score.getTotal_number_diamond(), 460, 25);
+ 		g2.drawString(this.score.getNumber_diamond() + " Diamonds found in " + this.score.getTotal_number_diamond(), 500, 50);
 	}
 
 
-	
-	
 	*/
+	
+	
 }
