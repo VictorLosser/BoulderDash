@@ -1,27 +1,12 @@
 package main;
 
-
-
 import java.io.IOException;
 import java.sql.SQLException;
 
 import view.View;
 
-/**
- * <h1>The Class Main.</h1>
- *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
- */
 public class Main {
 
-    /**
-     * The main method.
-     *
-     * @param args
-     *            the arguments
-     * @throws IOException 
-     */
     public static void main(final String[] args) throws IOException {
         
         
