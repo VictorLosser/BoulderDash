@@ -10,7 +10,7 @@ public class Main {
     public static void main(final String[] args) throws IOException {
         
         
-        final View view = new View("Title !", 720, 680);
+        final View view = new View("Title !", 1280, 720);
         
         try {
 			view.start();
