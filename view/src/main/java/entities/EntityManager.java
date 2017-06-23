@@ -7,9 +7,8 @@ import view.Handler;
 
 public class EntityManager {
 	
-	Handler handler;
-	Player player;
-	
+	private Handler handler;
+	private Player player;
 	private ArrayList<Entity> entities;
 
 	public EntityManager(Handler handler, Player player){
