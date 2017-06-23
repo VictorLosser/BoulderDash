@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import entities.EntityManager;
 import entities.Player;
+import entities.motionless.Ground;
 import mapdao.IWorld;
 import mapdao.Map;
 import mapdao.MapDAO;
@@ -26,6 +27,7 @@ public class World  {
     public World(Handler handler, String message){
         this.handler = handler;
         entityManager = new EntityManager(handler, new Player(handler, 100, 100));
+        //entityManager.addEntity(new Ground(handler, 200, 200));
         loadWorld(message);
         entityManager.getPlayer().setX(spawnX);
         entityManager.getPlayer().setY(spawnY);
@@ -76,6 +78,7 @@ public class World  {
         for(int y=0; y< height; y++){
             for(int x = 0; x < width; x++){
                 tiles[x][y] = Utils.parseInt(tokens[(x+y*width) + 4]);
+                if (tiles[x][y] == 0) { entityManager.addEntity(new Ground(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
             }
         }
     }

@@ -5,26 +5,28 @@ import view.Handler;
 
 public abstract class Creature extends Entity{
 
-	public static final int DEFAULT_HEALTH = 10;
+	
 	
 	public static final float DEFAULT_SPEED = 8.0f;
 
 	public static final int DEFAULT_CREATURE_WIDTH = 64, DEFAULT_CREATURE_HEIGHT = 64;
 	
-	protected int health;
+	
 	protected float speed;
 	protected float xMove, yMove;
 	
 	public Creature(Handler handler, float x, float y, int width, int height) {
         super(handler, x, y, width, height);
-        health = DEFAULT_HEALTH;
+        
         speed = DEFAULT_SPEED;
         xMove = 0;
         yMove = 0;
     }
 
     public void move(){
+    	if(!checkEntityCollision(xMove, 0f))
         moveX();
+    	if(!checkEntityCollision(0f, yMove))
         moveY();
     }
 
@@ -74,6 +76,10 @@ public abstract class Creature extends Entity{
 
     protected boolean collisionWithTile(int x, int y){ //This method verify if the entity is solid
         return handler.getWorld().getTile(x, y).isSolid();
+    }
+    
+    protected boolean pickUpTile(int x, int y){
+    	return handler.getWorld().getTile(x, y).isItem();
     }
     
     

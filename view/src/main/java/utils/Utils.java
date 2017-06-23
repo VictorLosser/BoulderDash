@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Utils {
 
-	public static String loadFileAsString(String path){
+	/*public static String loadFileAsString(String path){
 		StringBuilder builder = new StringBuilder();
 		
 		try{
@@ -21,7 +21,7 @@ public class Utils {
 		}
 		
 		return builder.toString();
-	}
+	}*/
 	
 	public static int parseInt(String number){
 		try{

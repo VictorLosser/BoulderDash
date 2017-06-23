@@ -8,7 +8,7 @@ public class Tile {
 	//STATIC STUFF HERE
 	
 	public static Tile[] tiles = new Tile[256];
-	public static Tile groundTile = new GroundTile(0);
+	//public static Tile groundTile = new GroundTile(0);
 	public static Tile noneTile = new NoneTile(4);
 	public static Tile wallTile = new WallTile(1);
 	public static Tile boulderTile = new BoulderTile(3);
@@ -38,6 +38,11 @@ public class Tile {
 	
 	public boolean isSolid(){
 		return false;
+	}
+	
+	public boolean isItem(){
+		return false;
+		
 	}
 	
 	public int getId(){

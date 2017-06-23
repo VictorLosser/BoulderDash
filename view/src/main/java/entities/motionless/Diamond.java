@@ -25,4 +25,10 @@ public class Diamond extends MotionlessEntity{
 		
 	}
 
+	@Override
+	public void die() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

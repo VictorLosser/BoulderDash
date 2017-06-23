@@ -2,6 +2,7 @@ package entities;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import view.Handler;
 
@@ -10,6 +11,14 @@ public class EntityManager {
 	private Handler handler;
 	private Player player;
 	private ArrayList<Entity> entities;
+	private Comparator<Entity> sorter = new Comparator<Entity>(){
+		@Override
+		public int compare(Entity a, Entity b){
+			if(a.getY() < b.getY())
+				return -1;
+			return 1;
+		}
+	};
 
 	public EntityManager(Handler handler, Player player){
 		this.handler = handler;
@@ -22,7 +31,10 @@ public class EntityManager {
 		for(int i = 0; i < entities.size(); i++){
 			Entity e = entities.get(i);
 			e.tick();
+			if(!e.isActive())
+				entities.remove(e);
 		}
+		entities.sort(sorter);
 	}
 	
 	public void render(Graphics g){
