@@ -7,25 +7,18 @@ package view;
  * @version 1.0
  */
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Timer;
-import java.util.TimerTask;
 import javax.swing.JPanel;
 
 public class ViewPanel extends JPanel implements Observer{
 
 	private ViewFrame	viewFrame;
-	
-	
-	
-	
 	
 	private static final long	serialVersionUID	= -998294702363713521L;
 	char[][] tabmap ;
@@ -40,14 +33,10 @@ public class ViewPanel extends JPanel implements Observer{
 	
 	int[][] array_map1;
 	
-	
-    
     //int[][] spriteSheetCoords = { { 0, 0, 16, 16 }, { 16, 0, 16, 16 }, { 0, 0, 16, 16 }, {  16, 0, 16, 16 }};
 
     public ViewPanel(final ViewFrame viewFrame) throws IOException {
 		this.setViewFrame(viewFrame);
-		
-	
 	
 		/*this.spriteSheetCoords = */
 		
@@ -79,12 +68,9 @@ public class ViewPanel extends JPanel implements Observer{
         
     }
 
-    
-    
     private void setViewFrame(final ViewFrame viewFrame) {
 		this.viewFrame = viewFrame;
 	}
-    
     
     @Override
     public void paintComponent(Graphics graphics) {
@@ -95,17 +81,12 @@ public class ViewPanel extends JPanel implements Observer{
         //super.paintComponent(graphics);
         graphics.drawImage(background, 32, 32, null);
         
-       
-      
     }
-
 
 	@Override
 	public void update(Observable o, Object arg) {
 		// TODO Auto-generated method stub
-		
 	}
-
 
 }	
 	/*@Override
@@ -115,6 +96,3 @@ public class ViewPanel extends JPanel implements Observer{
 		
 		
 	}*/
-	
-
-	

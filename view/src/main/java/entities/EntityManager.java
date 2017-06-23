@@ -3,7 +3,6 @@ package entities;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
-import entities.motionless.Diamond;
 import view.Handler;
 
 public class EntityManager {
