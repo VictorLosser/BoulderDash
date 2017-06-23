@@ -1,9 +1,9 @@
 //OBJECTS
-0 = Ground
+0 = Dirt
 1 = Wall
 2 = Wall (or brick)
 3 = Boulder
-4 = none
+4 = none/void/blank/empty/gap/air
 7 = Diamond
 
 //PLAYER
