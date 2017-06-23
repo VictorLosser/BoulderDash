@@ -27,7 +27,7 @@ public class Main {
     public static void main(final String[] args) throws IOException {
         
         
-        final View view = new View("Title !", 720, 680, null, null);
+        final View view = new View("Title !", 720, 680);
         
         try {
 			view.start();
