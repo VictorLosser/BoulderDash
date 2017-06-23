@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
-<<<<<<< HEAD
+
 import entities.Player;
 import entities.motionless.Diamond;
 import entities.motionless.Ground;
@@ -13,14 +13,13 @@ import mapdao.IState;
 import mapdao.IWorld;
 import mapdao.Map;
 import mapdao.MapDAO;
-=======
->>>>>>> branch 'master' of https://github.com/VictorLosser/BoulderDash.git
+
 import view.Handler;
 import worlds.World;
 
 public class GameState extends State implements IWorld {
 
-<<<<<<< HEAD
+
 	
 	
 	private IWorld view;
@@ -28,8 +27,7 @@ public class GameState extends State implements IWorld {
 		return view;
 	}
 
-=======
->>>>>>> branch 'master' of https://github.com/VictorLosser/BoulderDash.git
+
 	private World world;
 	
 	@Override
@@ -45,11 +43,11 @@ public class GameState extends State implements IWorld {
 	
 	public GameState(Handler handler) throws SQLException {
 		super(handler);
-<<<<<<< HEAD
+
 		world = new World(handler, this.getMapById(1).toString());
-=======
-		world = new World(handler, "C:/Users/victo/git/Boulder_Dash/model/res/world/world1.txt");
->>>>>>> branch 'master' of https://github.com/VictorLosser/BoulderDash.git
+
+		
+
 
 		handler.setWorld(world);
 		

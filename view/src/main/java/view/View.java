@@ -2,13 +2,12 @@ package view;
 
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
-<<<<<<< HEAD
+
 import java.awt.image.BufferedImage;
 import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
-=======
->>>>>>> branch 'master' of https://github.com/VictorLosser/BoulderDash.git
+
 
 import display.Display;
 import graphics.Assets;
