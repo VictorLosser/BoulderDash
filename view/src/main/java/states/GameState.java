@@ -1,21 +1,45 @@
 package states;
 
 import java.awt.Graphics;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
 
 import entities.Player;
 import entities.motionless.Diamond;
 import entities.motionless.Ground;
+import mapdao.IState;
+import mapdao.IWorld;
+import mapdao.Map;
+import mapdao.MapDAO;
 import view.Handler;
 import worlds.World;
 
-public class GameState extends State {
+public class GameState extends State implements IWorld {
 
 	
+	
+	private IWorld view;
+	public IWorld getView() {
+		return view;
+	}
+
 	private World world;
 	
-	public GameState(Handler handler) {
+	@Override
+	public Map getMapById(int id) throws SQLException {
+		return MapDAO.getMapById(id);
+	}  
+	@Override
+	public void displayMap(String message) {
+		JOptionPane.showMessageDialog(null, message);
+		
+	}
+	
+	
+	public GameState(Handler handler) throws SQLException {
 		super(handler);
-		world = new World(handler, "C:/Users/Windows/git/BoulderDash/model/res/world/world1.txt");
+		world = new World(handler, this.getMapById(1).toString());
 
 		handler.setWorld(world);
 		
@@ -33,5 +57,7 @@ public class GameState extends State {
 		world.render(g);
 		
 	}
+	
+	
 
 }

@@ -3,6 +3,7 @@ package main;
 
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import controller.Controller;
 import model.Model;
@@ -25,9 +26,15 @@ public class Main {
      */
     public static void main(final String[] args) throws IOException {
         
-        final Model model = new Model();
-        final View view = new View("Title !", 720, 680);
-        view.start();
+        
+        final View view = new View("Title !", 720, 680, null, null);
+        
+        try {
+			view.start();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         
         //final Controller controller = new Controller(view, model);
         

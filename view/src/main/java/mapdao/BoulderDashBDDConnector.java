@@ -1,4 +1,4 @@
-package model.dao;
+package mapdao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
