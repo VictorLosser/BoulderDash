@@ -17,54 +17,43 @@ import mapdao.MapDAO;
 import view.Handler;
 import worlds.World;
 
+/*---THIS CLASS DEFINE THE STATE OF THE GAME AND IT EXECUTE THE TICK AND THE RENDER---*/
 public class GameState extends State implements IWorld {
 
-
-	
+	private World world;
 	
 	private IWorld view;
 	public IWorld getView() {
 		return view;
 	}
 
-
-	private World world;
-	
 	@Override
 	public Map getMapById(int id) throws SQLException {
 		return MapDAO.getMapById(id);
 	}  
+	
 	@Override
 	public void displayMap(String message) {
 		JOptionPane.showMessageDialog(null, message);
-		
 	}
 	
 	
 	public GameState(Handler handler) throws SQLException {
 		super(handler);
 
-		world = new World(handler, this.getMapById(1).toString());
-
-		
-
+		/* /!\BY CHANGING THE NUMBER BELOW, YOU CHOOSE THE MAP YOU WANT/!\ */
+		world = new World(handler, this.getMapById(2).toString());
 
 		handler.setWorld(world);
-		
 	}
 
 	@Override
 	public void tick() {
 		world.tick();
-		
 	}
 
 	@Override
 	public void render(Graphics g) {
 		world.render(g);
-		
 	}
-	
-	
-
 }
