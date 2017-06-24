@@ -64,6 +64,16 @@ public abstract class Entity {
     		return false;
     	}
     
+    public boolean checkRockCollision(float xOffset, float yOffset){
+    	for(Entity b : handler.getWorld().getEntityManager().getRocks()){
+    		if(b.equals(this))
+    			continue;
+    		if(b.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset)))
+    			return true;
+    		}
+    		return false;
+    }
+    
     public boolean checkCreatureCollision(float xOffset, float yOffset){
     	for(Entity c : handler.getWorld().getEntityManager().getCreature()){
     		if(c.equals(this))
@@ -73,6 +83,8 @@ public abstract class Entity {
     		}
     		return false;
     }
+    
+   
     
     
     public Rectangle getCollisionBounds(float xOffset, float yOffset){

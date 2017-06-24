@@ -13,7 +13,7 @@ public class Main {
 
        
 
-        final View view = new View("Title !", 1280, 720);
+        final View view = new View("Boulder Dash", 1280, 720);
 
         
         try {

@@ -12,6 +12,8 @@ public class EntityManager {
 	private Player player;
 	private ArrayList<Entity> creature;
 	private ArrayList<Entity> entities;
+	private ArrayList<Entity> rocks;
+	
 	private Comparator<Entity> sorter = new Comparator<Entity>(){
 		@Override
 		public int compare(Entity a, Entity b){
@@ -26,8 +28,10 @@ public class EntityManager {
 		this.player = player;
 		creature = new ArrayList<Entity>();
 		entities = new ArrayList<Entity>();
+		rocks = new ArrayList<Entity>();
 		addEntity(player);
 		addCreature(player);
+		addRock(player);
 	}
 	
 
@@ -41,12 +45,18 @@ public class EntityManager {
 				entities.remove(e);
 		}
 		entities.sort(sorter);
+		for(int i = 0; i < rocks.size(); i++){
+			Entity b = rocks.get(i);
+			b.tick();
+		}rocks.sort(sorter);
 		for(int i = 0; i < creature.size(); i++){
 			Entity c = creature.get(i);
 			c.tick();
-			/*if(!c.isActive())
-				entities.remove(c);*/
+			if(!c.isActive())
+				creature.remove(c);
 		}
+		entities.sort(sorter);
+		
 	}
 		
 	
@@ -54,13 +64,20 @@ public class EntityManager {
 		for(Entity e : entities){
 		e.render(g);
 		}
+		for(Entity b : rocks){
+			b.render(g);
+			}
 		for(Entity c : creature){
 		c.render(g);
 		}
+		
 	}
 	
 	public void addEntity(Entity e){
 		entities.add(e);
+	}
+	public void addRock(Entity b){
+		rocks.add(b);
 	}
 	public void addCreature(Entity c){
 		creature.add(c);
@@ -68,10 +85,25 @@ public class EntityManager {
 	
 	
 	
+	
     /*/GETTERS AND SETTERS/*/
 	
 	
 	
+	public ArrayList<Entity> getRocks() {
+		return rocks;
+	}
+
+
+
+
+	public void setRocks(ArrayList<Entity> rocks) {
+		this.rocks = rocks;
+	}
+
+
+
+
 	public ArrayList<Entity> getCreature() {
 		return creature;
 	}

@@ -5,10 +5,10 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.Graphics2D;
 
-import java.awt.image.BufferedImage;
+
 import java.sql.SQLException;
 
-import javax.swing.JOptionPane;
+
 
 
 import display.Display;
@@ -16,10 +16,7 @@ import game_ui.Score;
 import graphics.Assets;
 import graphics.GameCamera;
 import input.KeyManager;
-import mapdao.IState;
-import mapdao.IWorld;
-import mapdao.Map;
-import mapdao.MapDAO;
+
 import states.GameState;
 import states.MenuState;
 import states.State;

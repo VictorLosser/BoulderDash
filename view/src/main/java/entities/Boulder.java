@@ -29,7 +29,7 @@ public class Boulder extends Creature{
 	private void checkTouch(){
     	Rectangle cb = getCollisionBounds(0,0);
     	Rectangle ar = new Rectangle();
-    	int arSize = 8;
+    	int arSize = 32;
     	ar.width = arSize;
     	ar.height = arSize;
     	
@@ -41,14 +41,21 @@ public class Boulder extends Creature{
     }
     	
     	Player p = handler.getWorld().getEntityManager().getPlayer();
-    	
-			
-				
-			
+
 			if(p.getCollisionBounds(0, 0).intersects(ar)){
 				p.touch(1);
 				return;
 			}
+				for(Entity c : handler.getWorld().getEntityManager().getCreature()){
+					if(c.equals(this))
+						continue;
+					
+					if(c.getCollisionBounds(0, 0).intersects(ar)){
+						c.touch(1);
+						return;
+					}
+				}
+			
 		}
     	
 	
@@ -71,6 +78,6 @@ public class Boulder extends Creature{
 	
 	private void getInput(){
         xMove = 0;
-        yMove = speed;
+        yMove = speed*2;
 	}
 }

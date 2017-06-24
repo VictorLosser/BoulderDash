@@ -84,7 +84,7 @@ public class World  {
             for(int x = 0; x < width; x++){
                 tiles[x][y] = Utils.parseInt(tokens[(x+y*width) + 4]);
                 if (tiles[x][y] == 0) { entityManager.addEntity(new Ground(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
-               if (tiles[x][y] == 3) {entityManager.addCreature( new Boulder(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
+               if (tiles[x][y] == 3) {entityManager.addRock( new Boulder(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
                if (tiles[x][y] == 5) {entityManager.addCreature( new Octopus(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
                if (tiles[x][y] == 6) {entityManager.addCreature( new Butterfly(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
                if (tiles[x][y] == 10) {entityManager.addCreature( new Noctu(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
