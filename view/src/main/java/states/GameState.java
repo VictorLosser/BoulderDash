@@ -37,7 +37,7 @@ public class GameState extends State implements IWorld {
 		super(handler);
 
 		/* /!\BY CHANGING THE NUMBER BELOW, YOU CHOOSE THE MAP YOU WANT/!\ */
-		world = new World(handler, this.getMapById(4).toString());
+		world = new World(handler, this.getMapById(1).toString());
 
 		handler.setWorld(world);
 	}

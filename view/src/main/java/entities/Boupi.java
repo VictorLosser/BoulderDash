@@ -100,9 +100,28 @@ private Animation boupiAni;
 	}
 	
 	private void getInput(){
-        xMove = 0;
+		xMove = 0;
         yMove = 0;
-	}
+		if(xMove <= 0)
+			xMove = -speed;
+		if(xMove <= - speed && checkCreatureCollision(xMove, 0f))
+				xMove = speed;
+			
+		
+		}
+         
+
+        //Here we apply the movement corresponding to the keyboard input
+        /*if(handler.getKeyManager().up)
+            yMove = -speed;
+        if(handler.getKeyManager().down)
+            yMove = speed;
+        if(handler.getKeyManager().left)
+            xMove = -speed;
+        if(handler.getKeyManager().right)
+            xMove = speed;*/
+	
+
 	
 	 public BufferedImage getCurrentFrame(){ //This method return the image corresponding to the movement
 	    	

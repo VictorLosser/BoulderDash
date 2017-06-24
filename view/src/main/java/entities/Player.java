@@ -18,8 +18,7 @@ import view.Handler;
 public class Player extends Creature{
 	
 	private Animation down,up,left,right,staticP;
-	private Score score;
-	private Font font;
+
 
     public Player(Handler handler, float x, float y) {
         super(handler, x, y, Creature.DEFAULT_CREATURE_HEIGHT, Creature.DEFAULT_CREATURE_WIDTH);
@@ -30,8 +29,7 @@ public class Player extends Creature{
         bounds.y = 15;
         bounds.width = 48;
         bounds.height = 50;
-       score = new Score();
-		font = new Font("Arial", Font.BOLD, 25);
+       
         //Here we attribute the image corresponding to the movement variable
         down = new Animation(300, Assets.downPlayer);
         up = new Animation(300, Assets.upPlayer);
@@ -132,6 +130,7 @@ public class Player extends Creature{
     
     @Override
     public void die(){
+    	
     	System.out.println("You Died");
     	JOptionPane.showMessageDialog(null, "You Died");
     	System.exit(0);

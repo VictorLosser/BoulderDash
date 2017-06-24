@@ -102,6 +102,16 @@ private Animation noctuAni;
 	private void getInput(){
         xMove = 0;
         yMove = 0;
+        
+        /*if(handler.getKeyManager().up)
+            yMove = -speed*7 /2;
+        if(handler.getKeyManager().down)
+            yMove = speed*7 /2;
+        if(handler.getKeyManager().left)
+            xMove = -speed*7 /2;
+        if(handler.getKeyManager().right)
+            xMove = speed*7 /2;*/
+	
 	}
 	
 	 public BufferedImage getCurrentFrame(){ //This method return the image corresponding to the movement

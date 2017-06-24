@@ -29,7 +29,7 @@ public class Boulder extends Creature{
 	private void checkTouch(){
     	Rectangle cb = getCollisionBounds(0,0);
     	Rectangle ar = new Rectangle();
-    	int arSize = 32;
+    	int arSize = 16;
     	ar.width = arSize;
     	ar.height = arSize;
     	
