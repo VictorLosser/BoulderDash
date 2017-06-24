@@ -28,8 +28,10 @@ public abstract class Creature extends Entity{
     		if(!checkCreatureCollision(xMove, 0f))
     			if(!checkRockCollision(xMove, 0f))
     			if(!checkEntityCollision(xMove, 0f))
+    				
         moveX();
-    	
+    		
+    		
     		if(!checkEntityCollision(0f, yMove))
     			if(!checkRockCollision(0f, yMove))
     			if(!checkCreatureCollision(0f, yMove))	

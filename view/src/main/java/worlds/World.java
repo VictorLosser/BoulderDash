@@ -5,15 +5,14 @@ import java.awt.Graphics;
 import entities.Boulder;
 import entities.Boupi;
 import entities.Butterfly;
+import entities.Diamonds;
 import entities.EntityManager;
 import entities.Noctu;
 import entities.Octopus;
 import entities.Player;
 
 import entities.motionless.Ground;
-
-
-
+import game_ui.Score;
 import tiles.Tile;
 import utils.Utils;
 import view.Handler;
@@ -26,10 +25,12 @@ public class World  {
     private int[][] tiles;
     
     private EntityManager entityManager;
-
+    
     public World(Handler handler, String message){
         this.handler = handler;
         entityManager = new EntityManager(handler, new Player(handler, 5555, 100));
+        
+        
        // entityManager = new EntityManager(handler, new Boulder(handler, 100, 100));
         //entityManager.addEntity(new Ground(handler, 200, 200));
         //entityManager.addCreature( new Octopus(handler,200,200));
@@ -89,9 +90,12 @@ public class World  {
                if (tiles[x][y] == 6) {entityManager.addCreature( new Butterfly(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
                if (tiles[x][y] == 10) {entityManager.addCreature( new Noctu(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
                if (tiles[x][y] == 11) {entityManager.addCreature( new Boupi(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
+               if (tiles[x][y] == 7) {entityManager.addItem( new Diamonds(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
             }
         }
     }
+    
+    
     
     public int getHeight(){
     	return height;

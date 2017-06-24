@@ -1,5 +1,7 @@
 package game_ui;
 
+import javax.swing.JOptionPane;
+
 public class Score {
 
 	//variables
@@ -10,8 +12,11 @@ public class Score {
 	//constructor
 	
 	public Score(){
-		this.setNumber_diamond(0);
-	}
+		this.number_diamond = 0;
+		
+		
+		}
+	
 
 	//getters
 	

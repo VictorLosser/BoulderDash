@@ -48,7 +48,6 @@ public abstract class Entity {
     public void touch(int amt){
     	health -= amt;
     	if(health <= 0){
-    	
     	active = false;	
     	die();
     }
@@ -79,6 +78,16 @@ public abstract class Entity {
     		if(c.equals(this))
     			continue;
     		if(c.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset)))
+    			return true;
+    		}
+    		return false;
+    }
+    
+    public boolean checkItemCollision(float xOffset, float yOffset){
+    	for(Entity i : handler.getWorld().getEntityManager().getItem()){
+    		if(i.equals(this))
+    			continue;
+    		if(i.getCollisionBounds(0f, 0f).intersects(getCollisionBounds(xOffset, yOffset)))
     			return true;
     		}
     		return false;
