@@ -9,11 +9,9 @@ public class Assets {
 	
 	//Here we create the different variable of the Rockford images on the sprite
 	
-	public static BufferedImage[] leftPlayer;
-	public static BufferedImage[] rightPlayer;
-	public static BufferedImage[] upPlayer;
-	public static BufferedImage[] downPlayer;
-	public static BufferedImage[] staticPlayer;
+	public static BufferedImage[] leftPlayer, rightPlayer, upPlayer, downPlayer, staticPlayer;
+	public static BufferedImage[] octopus, butterfly, pingou, noctu, boupi;
+	
 	//Here we create the different variable of the Enemies images on the sprite
 	public static BufferedImage wall, boulder, ground, diamond, none;
 
@@ -26,6 +24,11 @@ public class Assets {
 		upPlayer= new BufferedImage[2];
 		downPlayer= new BufferedImage[2];
 		staticPlayer= new BufferedImage[2];
+		octopus = new BufferedImage[4];
+		butterfly= new BufferedImage[4];
+		pingou= new BufferedImage[4];
+		noctu= new BufferedImage[4];
+		boupi= new BufferedImage[4];
 		
 		//This code will assign to a variable the location of a Rockford image on the sprite
 		leftPlayer[0] = sheetRockford.crop(0, height, width, height);
@@ -45,6 +48,31 @@ public class Assets {
 		none = sheetEnemies.crop(width*2, 0, width, height);
 		boulder = sheetEnemies.crop(width*3, 0, width, height);
 		diamond = sheetEnemies.crop(width*4, 0, width, height);
+		
+		octopus[0] = sheetEnemies.crop(width*10, height*12, width, height);
+		octopus[1] = sheetEnemies.crop(width*10, height*13, width, height);
+		octopus[2] = sheetEnemies.crop(width*10, height*14, width, height);
+		octopus[3] = sheetEnemies.crop(width*10, height*15, width, height);
+		
+		butterfly[0] = sheetEnemies.crop(width*10, 0, width, height);
+		butterfly[1] = sheetEnemies.crop(width*10, height*1, width, height);
+		butterfly[2] = sheetEnemies.crop(width*10, height*2, width, height);
+		butterfly[3] = sheetEnemies.crop(width*10, height*3, width, height);
+		
+		pingou[0] = sheetEnemies.crop(width*9, height*4, width, height);
+		pingou[1] = sheetEnemies.crop(width*9, height*5, width, height);
+		pingou[2] = sheetEnemies.crop(width*9, height*6, width, height);
+		pingou[3] = sheetEnemies.crop(width*9, height*7, width, height);
+		
+		noctu[0] = sheetEnemies.crop(width*9, height*8, width, height);	
+		noctu[1] = sheetEnemies.crop(width*9, height*9, width, height);
+		noctu[2] = sheetEnemies.crop(width*9, height*10, width, height);
+		noctu[3] = sheetEnemies.crop(width*9, height*11, width, height);
+		
+		boupi[0] = sheetEnemies.crop(width*9, height*16, width, height);
+		boupi[1] = sheetEnemies.crop(width*9, height*17, width, height);
+		boupi[2] = sheetEnemies.crop(width*9, height*18, width, height);
+		boupi[3] = sheetEnemies.crop(width*9, height*19, width, height);
 	}
 
 }

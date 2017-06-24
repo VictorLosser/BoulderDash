@@ -3,7 +3,11 @@ package worlds;
 import java.awt.Graphics;
 
 import entities.Boulder;
+import entities.Boupi;
+import entities.Butterfly;
 import entities.EntityManager;
+import entities.Noctu;
+import entities.Octopus;
 import entities.Player;
 
 import entities.motionless.Ground;
@@ -28,6 +32,7 @@ public class World  {
         entityManager = new EntityManager(handler, new Player(handler, 5555, 100));
        // entityManager = new EntityManager(handler, new Boulder(handler, 100, 100));
         //entityManager.addEntity(new Ground(handler, 200, 200));
+        //entityManager.addCreature( new Octopus(handler,200,200));
         loadWorld(message);
         entityManager.getPlayer().setX(spawnX);
         entityManager.getPlayer().setY(spawnY);
@@ -80,7 +85,10 @@ public class World  {
                 tiles[x][y] = Utils.parseInt(tokens[(x+y*width) + 4]);
                 if (tiles[x][y] == 0) { entityManager.addEntity(new Ground(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
                if (tiles[x][y] == 3) {entityManager.addCreature( new Boulder(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
-                
+               if (tiles[x][y] == 5) {entityManager.addCreature( new Octopus(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
+               if (tiles[x][y] == 6) {entityManager.addCreature( new Butterfly(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
+               if (tiles[x][y] == 10) {entityManager.addCreature( new Noctu(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
+               if (tiles[x][y] == 11) {entityManager.addCreature( new Boupi(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
             }
         }
     }

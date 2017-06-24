@@ -7,7 +7,7 @@ public abstract class Creature extends Entity{
 
 	
 	
-	public static final float DEFAULT_SPEED = 8.0f;
+	public static final float DEFAULT_SPEED = 4.0f;
 
 	public static final int DEFAULT_CREATURE_WIDTH = 64, DEFAULT_CREATURE_HEIGHT = 64;
 	
@@ -24,9 +24,11 @@ public abstract class Creature extends Entity{
     }
 
     public void move(){
-    	if(!checkEntityCollision(xMove, 0f))
+    	if(!checkCreatureCollision(xMove, 0f))
+    		if(!checkEntityCollision(xMove, 0f))
         moveX();
     	if(!checkEntityCollision(0f, yMove))
+    		if(!checkCreatureCollision(0f, yMove))	
         moveY();
     }
 
