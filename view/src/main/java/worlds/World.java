@@ -1,18 +1,8 @@
 package worlds;
 
 import java.awt.Graphics;
-
-import entities.Boulder;
-import entities.Boupi;
-import entities.Butterfly;
-import entities.Diamonds;
-import entities.EntityManager;
-import entities.Noctu;
-import entities.Octopus;
-import entities.Player;
-
+import entities.*;
 import entities.motionless.Ground;
-import game_ui.Score;
 import tiles.Tile;
 import utils.Utils;
 import view.Handler;
@@ -30,8 +20,7 @@ public class World  {
         this.handler = handler;
         entityManager = new EntityManager(handler, new Player(handler, 5555, 100));
         
-        
-       // entityManager = new EntityManager(handler, new Boulder(handler, 100, 100));
+        //entityManager = new EntityManager(handler, new Boulder(handler, 100, 100));
         //entityManager.addEntity(new Ground(handler, 200, 200));
         //entityManager.addCreature( new Octopus(handler,200,200));
         loadWorld(message);
@@ -95,8 +84,7 @@ public class World  {
         }
     }
     
-    
-    
+    /*/GETTERS AND SETTERS/*/
     public int getHeight(){
     	return height;
     }
@@ -104,9 +92,4 @@ public class World  {
     public int getWidth(){
     	return width;
     }
-
-	
-	
-	
-
 }

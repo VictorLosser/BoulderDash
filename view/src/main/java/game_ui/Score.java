@@ -1,37 +1,25 @@
 package game_ui;
 
-import javax.swing.JOptionPane;
-
 public class Score {
 
-	//variables
-	
+	//Variables
 	private final int total_number_diamond = 10;
 	private int number_diamond;
 	
-	//constructor
-	
+	//Constructor
 	public Score(){
 		this.number_diamond = 0;
-		
-		
-		}
-	
+	}
 
-	//getters
-	
+	/*/GETTERS AND SETTERS/*/
 	public int getTotal_number_diamond() {
 		return total_number_diamond;
 	}
 	public int getNumber_diamond() {
 		return number_diamond;
 	}
-
-	//setters
 	
 	public void setNumber_diamond(int number_diamond) {
 		this.number_diamond = number_diamond;
-	}
-	
-	
+	}	
 }

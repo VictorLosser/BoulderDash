@@ -1,16 +1,11 @@
 package entities;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import game_ui.Score;
 import graphics.Animation;
 import graphics.Assets;
 import view.Handler;
@@ -18,7 +13,6 @@ import view.Handler;
 public class Player extends Creature{
 	
 	private Animation down,up,left,right,staticP;
-
 
     public Player(Handler handler, float x, float y) {
         super(handler, x, y, Creature.DEFAULT_CREATURE_HEIGHT, Creature.DEFAULT_CREATURE_WIDTH);
@@ -59,13 +53,10 @@ public class Player extends Creature{
     	int arSize = 8;
     	int arSize2 = 32;
     	
-    	
     	ar.width = arSize;
     	ar.height = arSize;
     	ar2.width = arSize2;
     	ar2.height = arSize2;
-    	
-    	
     	
     	if(handler.getKeyManager().dup){
     		ar2.x = cb.x+ cb.width / 2 - arSize2 / 2;
@@ -80,7 +71,7 @@ public class Player extends Creature{
         }else if(handler.getKeyManager().dright){
                 		ar2.x = cb.x + cb.width;
                 		ar2.y = cb.y + cb.height / 2 -arSize2 /2 ;
-            		
+      
         }else if(handler.getKeyManager().up){
     		ar.x = cb.x+ cb.width / 2 - arSize / 2;
     		ar.y = cb.y - arSize;
@@ -90,17 +81,12 @@ public class Player extends Creature{
     	}else if(handler.getKeyManager().left){
             		ar.x = cb.x - arSize;
             		ar.y = cb.y+ cb.height / 2 -arSize /2;
-        		
         }else if(handler.getKeyManager().right){
                 		ar.x = cb.x + cb.width;
-                		ar.y = cb.y + cb.height / 2 -arSize /2 ;
-            		
+                		ar.y = cb.y + cb.height / 2 -arSize /2 ;    		
         }else{
         	return;
         }
-    	
-    	
-    	
     	
     		for(Entity e : handler.getWorld().getEntityManager().getEntities()){
     			if(e.equals(this))
@@ -122,8 +108,7 @@ public class Player extends Creature{
     				i.touch(1);
     				//this.score.setNumber_diamond(this.score.getNumber_diamond() + 1);
     				return;
-    			}
-    			
+    			}		
     			}
     	}
     }			
@@ -176,8 +161,6 @@ public class Player extends Creature{
     		return down.getCurrentFrame();
     	}else{
     		return staticP.getCurrentFrame();
-    	}
-    	
+    	}	
     }
-
 }

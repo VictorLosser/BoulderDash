@@ -1,10 +1,8 @@
 package entities;
 
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-import game_ui.Score;
 import graphics.Assets;
 import view.Handler;
 
@@ -26,14 +24,12 @@ public class Diamonds extends Creature{
 
 	@Override
 	public void tick() {
-		
 		getInput();
 		if(!checkItemCollision(0f, yMove))
 			if(!checkItemCollision(xMove, 0f))
 		move();
 		
 		checkTouch();
-		
 	}
 	
 	private void checkTouch(){
@@ -50,55 +46,40 @@ public class Diamonds extends Creature{
     	return;
     }
     	
-    	Player p = handler.getWorld().getEntityManager().getPlayer();
+    Player p = handler.getWorld().getEntityManager().getPlayer();
 
-			if(p.getCollisionBounds(0, 0).intersects(ar)){
-				p.touch(1);
-				return;
-			}
-				for(Entity c : handler.getWorld().getEntityManager().getCreature()){
-					if(c.equals(this))
-						continue;
-					
-					if(c.getCollisionBounds(0, 0).intersects(ar)){
-						c.touch(1);
-						return;
-					}
-				}
-			
-		}
-    	
-	
-
-	
-		@Override
-	    public void render(Graphics g) {
-	        render(g, (int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()));
-		
+	if(p.getCollisionBounds(0, 0).intersects(ar)){
+		p.touch(1);
+		return;
 	}
-		public void render(Graphics g, int x, int y){
-			g.drawImage(Assets.diamond, x, y, width,height, null);
-			//g.setFont(font);
-			//g.drawString("Diamonds "+this.score.getNumber_diamond()+ "/" + this.score.getTotal_number_diamond(), 1000, 25);
+	
+	for(Entity c : handler.getWorld().getEntityManager().getCreature()){
+		if(c.equals(this))
+			continue;		
+		if(c.getCollisionBounds(0, 0).intersects(ar)){
+			c.touch(1);
+			return;
 		}
+	}		
+	}
+    	
+	@Override
+	public void render(Graphics g) {
+		render(g, (int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()));
+	}
 	
-	
-
-	
-	public void die() {
+	public void render(Graphics g, int x, int y){
+		g.drawImage(Assets.diamond, x, y, width,height, null);
+		//g.setFont(font);
+		//g.drawString("Diamonds "+this.score.getNumber_diamond()+ "/" + this.score.getTotal_number_diamond(), 1000, 25);
+	}
 		
+	public void die() {	
 		System.out.println("MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY ");
 	}
-
 	
-	private void getInput(){
-		
+	private void getInput(){	
 		xMove = 0;
         yMove = speed*2;
-    }    
-    
-		
-	
-	
+    }    	
 }
-
