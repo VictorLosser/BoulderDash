@@ -14,9 +14,9 @@ public class Ground extends MotionlessEntity{//The ground don't move so it exten
 		super(handler, x, y,  Tile.TILEWIDTH, Tile.TILEHIGHT);
 		
 		bounds.x = 0;
-        bounds.y = 5;
-        bounds.width = 64;
-        bounds.height = 58;
+        bounds.y = 3;
+        bounds.width = 63;
+        bounds.height = 60;
 	}
 	
 	

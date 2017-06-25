@@ -103,9 +103,9 @@ private Animation boupiAni;
 		xMove = 0;
         yMove = 0;
 		if(xMove <= 0)
-			xMove = -speed;
+			xMove = -speed*2;
 		if(xMove <= - speed && checkCreatureCollision(xMove, 0f))
-				xMove = speed;
+				xMove = speed*2;
 			
 		
 		}

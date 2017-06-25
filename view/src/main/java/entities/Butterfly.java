@@ -101,7 +101,7 @@ private Animation bflyAni;
 	
 	private void getInput(){
         xMove = 0;
-        yMove = 0;
+        yMove = -speed*2;
 	}
 	
 	 public BufferedImage getCurrentFrame(){ //This method return the image corresponding to the movement

@@ -41,7 +41,7 @@ public class Octopus extends Creature{
     	Rectangle ar2 = new Rectangle();
     	Rectangle ar3 = new Rectangle();
     	Rectangle ar4 = new Rectangle();
-    	int arSize = 16;
+    	int arSize = 64;
     	ar.width = arSize;
     	ar.height = arSize;
     	ar2.width = arSize;

@@ -47,7 +47,7 @@ public class EntityManager {
 		this.player = player;
 		
 		score = new Score();
-		font = new Font("Arial", Font.PLAIN, 18);
+		font = new Font("Arial", Font.BOLD, 40);
 		
 		
 		creature = new ArrayList<Entity>();
@@ -114,7 +114,7 @@ public class EntityManager {
 			i.render(g);
 		}
 		g.setFont(font);
-		g.drawString("Diamonds "+this.score.getNumber_diamond()+ "/" + this.score.getTotal_number_diamond(), 1000, 25);
+		g.drawString("Diamonds "+this.score.getNumber_diamond()+ "/" + this.score.getTotal_number_diamond(), 35, 35);
 		
 	}
 	

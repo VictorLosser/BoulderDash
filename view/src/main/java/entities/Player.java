@@ -26,9 +26,9 @@ public class Player extends Creature{
         //These variables will size the rectangle that will be in collision with an object
         //If we don't define these variables, it will be full size by default
         bounds.x = 7;
-        bounds.y = 15;
+        bounds.y = 29;
         bounds.width = 48;
-        bounds.height = 50;
+        bounds.height = 36;
        
         //Here we attribute the image corresponding to the movement variable
         down = new Animation(300, Assets.downPlayer);

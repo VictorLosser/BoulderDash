@@ -65,6 +65,7 @@ public class Diamonds extends Creature{
 						return;
 					}
 				}
+				
 			
 		}
     	
@@ -87,7 +88,7 @@ public class Diamonds extends Creature{
 	
 	public void die() {
 		
-		System.out.println("MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY ");
+		System.out.println("MONEY MONEY MONEY MONEY MONEY");
 	}
 
 	

@@ -103,14 +103,14 @@ private Animation noctuAni;
         xMove = 0;
         yMove = 0;
         
-        /*if(handler.getKeyManager().up)
+        if(handler.getKeyManager().up)
             yMove = -speed*7 /2;
         if(handler.getKeyManager().down)
             yMove = speed*7 /2;
         if(handler.getKeyManager().left)
-            xMove = -speed*7 /2;
+            xMove = speed*7 /2;
         if(handler.getKeyManager().right)
-            xMove = speed*7 /2;*/
+            xMove = -speed*7 /2;
 	
 	}
 	
