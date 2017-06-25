@@ -48,7 +48,6 @@ public class Diamonds extends Creature{
     	
     Player p = handler.getWorld().getEntityManager().getPlayer();
 
-<<<<<<< HEAD
 			if(p.getCollisionBounds(0, 0).intersects(ar)){
 				p.touch(1);
 				return;
@@ -64,20 +63,9 @@ public class Diamonds extends Creature{
 				}
 				
 			
-		}
-    	
-	
-
-	
-		@Override
-	    public void render(Graphics g) {
-	        render(g, (int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()));
-		
-=======
 	if(p.getCollisionBounds(0, 0).intersects(ar)){
 		p.touch(1);
 		return;
->>>>>>> branch 'master' of https://github.com/VictorLosser/BoulderDash.git
 	}
 	
 	for(Entity c : handler.getWorld().getEntityManager().getCreature()){
@@ -101,12 +89,8 @@ public class Diamonds extends Creature{
 		//g.drawString("Diamonds "+this.score.getNumber_diamond()+ "/" + this.score.getTotal_number_diamond(), 1000, 25);
 	}
 		
-<<<<<<< HEAD
-		System.out.println("MONEY MONEY MONEY MONEY MONEY");
-=======
 	public void die() {	
-		System.out.println("MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY MONEY ");
->>>>>>> branch 'master' of https://github.com/VictorLosser/BoulderDash.git
+		System.out.println("MONEY MONEY MONEY MONEY MONEY");
 	}
 	
 	private void getInput(){	
