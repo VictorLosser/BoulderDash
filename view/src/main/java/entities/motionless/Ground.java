@@ -1,8 +1,6 @@
 package entities.motionless;
 
-import java.awt.Color;
 import java.awt.Graphics;
-
 import graphics.Assets;
 import tiles.Tile;
 import view.Handler;
@@ -19,8 +17,6 @@ public class Ground extends MotionlessEntity{//The ground don't move so it exten
         bounds.height = 60;
 	}
 	
-	
-
 	@Override
 	public void tick() {
 		
@@ -38,5 +34,4 @@ public class Ground extends MotionlessEntity{//The ground don't move so it exten
                 (int) (y + bounds.y - handler.getGameCamera().getyOffset()),
                 bounds.width, bounds.height);*/
 	}
-
 }

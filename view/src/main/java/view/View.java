@@ -1,18 +1,11 @@
 package view;
 
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
-import java.awt.Graphics2D;
-
 
 import java.sql.SQLException;
 
-
-
-
 import display.Display;
-import game_ui.Score;
 import graphics.Assets;
 import graphics.GameCamera;
 import input.KeyManager;
@@ -21,21 +14,14 @@ import states.GameState;
 import states.MenuState;
 import states.State;
 
-	//This class will put something on the created frame
-
-public class View implements Runnable { 
-
-	
-	
-
+/*---THIS CLASS WILL PUT SOMETHING ON THE CREATED FRAME AND MANAGE OUR PROJECT---*/
+public class View implements Runnable {
 	
     private Display display;
     public int width, height;
     public String title;
-
     private boolean running = false;
     private Thread thread;
-
     private BufferStrategy bs;
     private Graphics g;
 
@@ -60,10 +46,7 @@ public class View implements Runnable {
         keyManager = new KeyManager();
     }
     
-    
-
     private void init() throws SQLException {
-
         display = new Display(title, width, height);
         display.getFrame().addKeyListener(keyManager);
 
@@ -71,16 +54,13 @@ public class View implements Runnable {
         handler = new Handler(this);
         gameCamera = new GameCamera(handler, 0,0);
         
-
         gameState = new GameState(handler);
         menuState = new MenuState(handler);
         State.setState(gameState);
     }
 
-
     private void tick() {
         keyManager.tick();
-
         if(State.getState() != null)
             State.getState().tick();
     }
@@ -95,10 +75,8 @@ public class View implements Runnable {
         //Clear Screen
         g.clearRect(0, 0, width, height);
         //Draw Here !
-
         if(State.getState() != null)
             State.getState().render(g);
-
 
         //End Drawing !
         bs.show();
@@ -112,7 +90,6 @@ public class View implements Runnable {
 		try {
 			init();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -143,10 +120,32 @@ public class View implements Runnable {
 				timer = 0;
 			}
 		}
-		
 		stop();
 	}
 	
+	public synchronized void start() throws SQLException{
+		if(running)
+			return;
+		
+		running = true;
+		thread = new Thread(this);
+		thread.start();
+	}
+	
+	public synchronized void stop(){
+		if(!running)
+			return;
+		running = false;
+		
+			try {
+				thread.join();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}	
+
+	/*/GETTERS AND SETTERS/*/
 	public KeyManager getKeyManager(){
 		return keyManager;
 	}
@@ -162,36 +161,4 @@ public class View implements Runnable {
 	public int getHeight() {
 		return height;
 	}
-	
-	
-	public synchronized void start() throws SQLException{
-		
-		
-		if(running)
-			return;
-		
-		running = true;
-		thread = new Thread(this);
-		thread.start();
-		
-	}
-	
-	public synchronized void stop(){
-		
-		if(!running)
-			return;
-		running = false;
-		
-			try {
-				thread.join();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-
-	
-	
-	
-	
 }
