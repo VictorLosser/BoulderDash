@@ -8,10 +8,12 @@ Victor LOSSER - Florian PFEIFER - Filipe LENOIR - Léandre LOUX - Benjamin RAUNET
 
 **Toutes les classes tests se trouvent dans (view/src/test/java)**
 
+
 JavaDoc : (target)
 
 SureFire Report : (target/site/surefire-report.html)
 
 JXR : (target/xref)
+
 
 Amusez vous bien avec Boulder Dash !
