@@ -8,11 +8,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import states.GameState;
 import view.Handler;
 
 public class WorldTest {
 
 	private World world;
+	private GameState gamestate;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -26,17 +28,27 @@ public class WorldTest {
 	public void setUp() throws Exception {
 		
 		Handler handler = null;
-		String path = null;
-		world = new World(handler,path);
+		gamestate = new GameState(handler);
+		
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		
 	}
-
+	
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testGetWidth(){
+		int expected = 40;
+		int actual = world.getWidth();
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void testGeHeight(){
+		int expected = 22;
+		int actual = world.getHeight();
+		assertEquals(expected, actual);
 	}
 
 }

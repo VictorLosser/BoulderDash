@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class ViewPanelTest {
+public class HandlerTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,22 +27,7 @@ public class ViewPanelTest {
 	}
 
 	@Test
-	public void testViewPanel() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testPaintComponentGraphics() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testUpdateObservableObject() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testAfficherMap() {
+	public void test() {
 		fail("Not yet implemented");
 	}
 
