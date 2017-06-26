@@ -11,9 +11,9 @@ Victor LOSSER - Florian PFEIFER - Filipe LENOIR - Léandre LOUX - Benjamin RAUNET
 
 JavaDoc : (target)
 
-SureFire Report : (target/site/surefire-report.html)
+SureFire Report : (view/target/site/surefire-report.html)
 
-JXR : (target/xref)
+JXR : (view/target/site/xref) & (target/site/xref)
 
 
 Amusez vous bien avec Boulder Dash !
