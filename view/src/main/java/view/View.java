@@ -16,8 +16,6 @@ import states.State;
 
 /*---THIS CLASS WILL PUT SOMETHING ON THE CREATED FRAME AND MANAGE OUR PROJECT---*/
 
-
-
 public class View implements Runnable {
 	
     private Display display;
