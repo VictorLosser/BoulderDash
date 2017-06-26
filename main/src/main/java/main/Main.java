@@ -10,7 +10,7 @@ public class Main {
     public static void main(final String[] args) throws IOException {
         
         
-
+    	//main
        
 
         final View view = new View("Boulder Dash", 980, 760);
@@ -25,13 +25,6 @@ public class Main {
         
         //final Controller controller = new Controller(view, model);
         
-		
-		
-        /*try {
-            controller.start();
-        } catch (final SQLException exception) {
-            exception.printStackTrace();
-        }*/
     }
 
 }

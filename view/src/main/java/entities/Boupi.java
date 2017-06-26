@@ -15,7 +15,7 @@ private Animation boupiAni;
 		super(handler, x, y, Creature.DEFAULT_CREATURE_HEIGHT, Creature.DEFAULT_CREATURE_WIDTH);
 
 
-		
+		//Generates the bounds of the sprite
 		 bounds.x = 0;
 	        bounds.y = 0;
 	        bounds.width = 63;
@@ -24,7 +24,7 @@ private Animation boupiAni;
 	        
 	        boupiAni = new Animation(300, Assets.boupi);
 	}
-
+	//Ticks the different methods of this class
 	@Override
 	public void tick() {
 		boupiAni.tock();
@@ -32,7 +32,7 @@ private Animation boupiAni;
 		move();
 		checkTouch();
 	}
-	
+	//Checks if the sprite is touching another destructible sprite
 	private void checkTouch(){
     	Rectangle cb = getCollisionBounds(0,0);
     	Rectangle ar = new Rectangle();
@@ -86,7 +86,7 @@ private Animation boupiAni;
         	return;
         }
 	}
-
+	//Renders the sprites on the map
 	@Override
 	public void render(Graphics g) {
 	      g.drawImage(getCurrentFrame(), (int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()), width, height,null);
@@ -98,7 +98,7 @@ private Animation boupiAni;
 		// TODO Auto-generated method stub
 		
 	}
-	
+	//Gets the Input for the move method
 	private void getInput(){
 		xMove = 0;
         yMove = 0;
@@ -111,18 +111,10 @@ private Animation boupiAni;
 		}
          
 
-        //Here we apply the movement corresponding to the keyboard input
-        /*if(handler.getKeyManager().up)
-            yMove = -speed;
-        if(handler.getKeyManager().down)
-            yMove = speed;
-        if(handler.getKeyManager().left)
-            xMove = -speed;
-        if(handler.getKeyManager().right)
-            xMove = speed;*/
+   
 	
 
-	
+	//Gets the Current Frame of the creature
 	 public BufferedImage getCurrentFrame(){ //This method return the image corresponding to the movement
 	    	
 	    		return boupiAni.getCurrentFrame();

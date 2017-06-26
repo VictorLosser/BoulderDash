@@ -17,7 +17,7 @@ public class Octopus extends Creature{
 		super(handler, x, y, Creature.DEFAULT_CREATURE_HEIGHT, Creature.DEFAULT_CREATURE_WIDTH);
 
 
-		
+		//Generates the bounds of the sprite
 		 bounds.x = 0;
 	        bounds.y = 0;
 	        bounds.width = 63;
@@ -26,7 +26,7 @@ public class Octopus extends Creature{
 	        
 	        octoAni = new Animation(300, Assets.octopus);
 	}
-
+	//Ticks the different methods of this class
 	@Override
 	public void tick() {
 		octoAni.tock();
@@ -34,7 +34,7 @@ public class Octopus extends Creature{
 		move();
 		checkTouch();
 	}
-	
+	//Checks if the sprite is touching another destructible sprite
 	private void checkTouch(){
     	Rectangle cb = getCollisionBounds(0,0);
     	Rectangle ar = new Rectangle();
@@ -88,7 +88,7 @@ public class Octopus extends Creature{
         	return;
         }
 	}
-
+	//Renders the sprites on the map
 	@Override
 	public void render(Graphics g) {
 	      g.drawImage(getCurrentFrame(), (int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()), width, height,null);
@@ -100,7 +100,7 @@ public class Octopus extends Creature{
 		// TODO Auto-generated method stub
 		
 	}
-	
+	//Gets the Input for the move method
 	private void getInput(){
         xMove = 0;
         yMove = 0;

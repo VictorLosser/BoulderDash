@@ -16,11 +16,11 @@ public abstract class Entity {
     public boolean isActive() {
 		return active;
 	}
-
+    //Decides if the sprite should still be active or not
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-
+	//The constructor method for all entities
 	public Entity(Handler handler, float x, float y, int width, int height){
         this.handler = handler;
         this.x = x;		//Position in x
@@ -30,14 +30,8 @@ public abstract class Entity {
         health = DEFAULT_HEALTH;
         bounds = new Rectangle(0,0,width,height);
     }
-
-    public int getHealth() {
-		return health;
-	}
-
-	public void setHealth(int health) {
-		this.health = health;
-	}
+	
+    
 
 	public abstract void tick();
 
@@ -53,6 +47,7 @@ public abstract class Entity {
     }
     }
 
+    //Checks if there is a collision with an Entity
     public boolean checkEntityCollision(float xOffset, float yOffset){
     	for(Entity e : handler.getWorld().getEntityManager().getEntities()){
     		if(e.equals(this))
@@ -62,7 +57,7 @@ public abstract class Entity {
     		}
     		return false;
     	}
-    
+    //Checks if there is a collision with an Rocks
     public boolean checkRockCollision(float xOffset, float yOffset){
     	for(Entity b : handler.getWorld().getEntityManager().getRocks()){
     		if(b.equals(this))
@@ -72,7 +67,7 @@ public abstract class Entity {
     		}
     		return false;
     }
-    
+    //Checks if there is a collision with an Creature
     public boolean checkCreatureCollision(float xOffset, float yOffset){
     	for(Entity c : handler.getWorld().getEntityManager().getCreature()){
     		if(c.equals(this))
@@ -82,7 +77,7 @@ public abstract class Entity {
     		}
     		return false;
     }
-    
+  //Checks if there is a collision with an Item
     public boolean checkItemCollision(float xOffset, float yOffset){
     	for(Entity i : handler.getWorld().getEntityManager().getItem()){
     		if(i.equals(this))
@@ -94,14 +89,12 @@ public abstract class Entity {
     }
     
    
-    
+    /*/GETTERS AND SETTERS/*/
     
     public Rectangle getCollisionBounds(float xOffset, float yOffset){
     	return new Rectangle((int) (x + bounds.x + xOffset), (int) (y + bounds.y + yOffset), bounds.width, bounds.height);
     }
-    
-    /*/GETTERS AND SETTERS/*/
-    
+        
     public float getX() {
         return x;
     }
@@ -133,6 +126,14 @@ public abstract class Entity {
     public void setHeight(int height) {
         this.height = height;
     }
+    
+    public int getHealth() {
+		return health;
+	}
+
+	public void setHealth(int health) {
+		this.health = health;
+	}
 
 
 }

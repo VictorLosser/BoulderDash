@@ -9,7 +9,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class MainTest {
-
+	
+	//test for the main
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}

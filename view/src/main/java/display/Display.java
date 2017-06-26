@@ -43,7 +43,7 @@ public class Display { //This class will create and show the frame
 		frame.add(canvas);
 		frame.pack();
 	}
-	
+	// GETTERS
 	public Canvas getCanvas(){
 		return canvas;
 	}

@@ -25,6 +25,7 @@ public class EntityManager {
 	
 	private Comparator<Entity> sorter = new Comparator<Entity>(){
 		
+		//Compares the position of the entities on the map and puts it in front of it
 		@Override
 		public int compare(Entity a, Entity b){
 			if(a.getY() < b.getY())
@@ -32,7 +33,7 @@ public class EntityManager {
 			return 1;
 		}
 	};
-	
+	//Compares the position of the entities on the map and puts it in front of it
 	private Comparator<Entity> sorter2 = new Comparator<Entity>(){
 		@Override
 		public int compare(Entity a, Entity b){
@@ -41,7 +42,7 @@ public class EntityManager {
 			return 1;
 		}
 	};
-
+	//Constructor method of this class
 	public EntityManager(Handler handler, Player player){
 		this.handler = handler;
 		this.player = player;
@@ -62,7 +63,7 @@ public class EntityManager {
 	
 
 
-
+	//tick the methods of this class
 	public void tick(){
 		Iterator<Entity> it = entities.iterator();
 		//for(int i = 0; i < entities.size(); i++)
@@ -99,7 +100,7 @@ public class EntityManager {
 		}item.sort(sorter2);
 	}
 		
-	
+	//Renders the entities
 	public void render(Graphics g){
 		for(Entity e : entities){
 		e.render(g);
@@ -117,7 +118,7 @@ public class EntityManager {
 		g.drawString("Diamonds "+this.score.getNumber_diamond()+ "/" + this.score.getTotal_number_diamond(), 35, 35);
 		
 	}
-	
+	//Add the different types of entities 
 	public void addEntity(Entity e){
 		entities.add(e);
 	}

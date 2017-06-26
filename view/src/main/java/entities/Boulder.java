@@ -11,13 +11,13 @@ public class Boulder extends Creature{
 	public Boulder(Handler handler, float x, float y) {
 		super(handler, x, y, Creature.DEFAULT_CREATURE_HEIGHT, Creature.DEFAULT_CREATURE_WIDTH);
 
-
+		//Generates the bounds of the sprite
 		 bounds.x = 0;
 	        bounds.y = 0;
 	        bounds.width = 63;
 	        bounds.height = 63;
 	}
-
+	//Ticks the different methods of this class
 	@Override
 	public void tick() {
 		getInput();
@@ -25,7 +25,7 @@ public class Boulder extends Creature{
 		move();
 		checkTouch();
 	}
-	
+	//Checks if the sprite is touching another destructible sprite
 	private void checkTouch(){
     	Rectangle cb = getCollisionBounds(0,0);
     	Rectangle ar = new Rectangle();
@@ -60,7 +60,7 @@ public class Boulder extends Creature{
     	
 	
 
-	
+		//Renders the sprite on the map
 		@Override
 	    public void render(Graphics g) {
 	        g.drawImage(Assets.boulder, (int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()), width, height,null);
@@ -68,14 +68,14 @@ public class Boulder extends Creature{
 	}
 	
 	
-
+		
 	@Override
 	public void die() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	
+		//Gets the Input for the move method
 	private void getInput(){
         xMove = 0;
         yMove = speed*2;

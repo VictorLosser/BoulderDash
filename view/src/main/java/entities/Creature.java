@@ -22,7 +22,7 @@ public abstract class Creature extends Entity{
         xMove = 0;
         yMove = 0;
     }
-
+	//Manage the movement and checks if it is possible
     public void move(){
     	
     		if(!checkCreatureCollision(xMove, 0f))
@@ -37,7 +37,7 @@ public abstract class Creature extends Entity{
     			if(!checkCreatureCollision(0f, yMove))	
         moveY();
     }
-
+    //Makes possible the mobility on the X axis if there is no solid Tile in  the way
     public void moveX(){ //Method to move on the x axis
         if(xMove > 0){//Moving right
             int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
@@ -59,7 +59,7 @@ public abstract class Creature extends Entity{
             }
         }
     }
-
+  //Makes possible the mobility on the Y axis if there is no solid Tile in  the way
     public void moveY(){ //Method to move on the y axis
         if(yMove < 0){//Up
             int ty = (int) (y + yMove + bounds.y) / Tile.TILEHIGHT;

@@ -15,7 +15,7 @@ private Animation noctuAni;
 		super(handler, x, y, Creature.DEFAULT_CREATURE_HEIGHT, Creature.DEFAULT_CREATURE_WIDTH);
 
 
-		
+		//Generates the bounds of the sprite
 		 bounds.x = 0;
 	        bounds.y = 0;
 	        bounds.width = 63;
@@ -24,7 +24,7 @@ private Animation noctuAni;
 	        
 	        noctuAni = new Animation(300, Assets.noctu);
 	}
-
+	//Ticks the different methods of this class
 	@Override
 	public void tick() {
 		noctuAni.tock();
@@ -32,7 +32,7 @@ private Animation noctuAni;
 		move();
 		checkTouch();
 	}
-	
+	//Checks if the sprite is touching another destructible sprite
 	private void checkTouch(){
     	Rectangle cb = getCollisionBounds(0,0);
     	Rectangle ar = new Rectangle();
@@ -86,7 +86,7 @@ private Animation noctuAni;
         	return;
         }
 	}
-
+	//Renders the sprites on the map
 	@Override
 	public void render(Graphics g) {
 	      g.drawImage(getCurrentFrame(), (int) (x - handler.getGameCamera().getxOffset()),(int) (y - handler.getGameCamera().getyOffset()), width, height,null);
@@ -98,7 +98,7 @@ private Animation noctuAni;
 		// TODO Auto-generated method stub
 		
 	}
-	
+	//Gets the Input for the move method
 	private void getInput(){
         xMove = 0;
         yMove = 0;

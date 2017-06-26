@@ -80,6 +80,7 @@ public class World  {
                if (tiles[x][y] == 10) {entityManager.addCreature( new Noctu(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
                if (tiles[x][y] == 11) {entityManager.addCreature( new Boupi(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
                if (tiles[x][y] == 7) {entityManager.addItem( new Diamonds(handler, x * Tile.TILEWIDTH, y * Tile.TILEHIGHT)); }
+               
             }
         }
     }

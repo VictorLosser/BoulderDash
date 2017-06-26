@@ -44,7 +44,7 @@ public class Player extends Creature{
         handler.getGameCamera().centerOnEntity(this);
         checkTouch();
     }
-
+  //Checks if the sprite is touching another destructible sprite
     private void checkTouch(){
     	Rectangle cb = getCollisionBounds(0,0);
     	Rectangle ar = new Rectangle();
@@ -138,12 +138,7 @@ public class Player extends Creature{
     @Override
     public void render(Graphics g) {
         g.drawImage(getCurrentFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
-        //g.setFont(font);
-		//g.drawString("Diamonds "+this.score.getNumber_diamond()+ "/" + this.score.getTotal_number_diamond(), 1000, 25);
-        /*g.setColor(Color.green);
-        g.fillRect((int) (x + bounds.x - handler.getGameCamera().getxOffset()),
-                (int) (y + bounds.y - handler.getGameCamera().getyOffset()),
-                bounds.width, bounds.height);*/
+       
        
     }
     
