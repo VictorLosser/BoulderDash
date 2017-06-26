@@ -20,9 +20,7 @@ public class World  {
         this.handler = handler;
         entityManager = new EntityManager(handler, new Player(handler, 5555, 100));
         
-        //entityManager = new EntityManager(handler, new Boulder(handler, 100, 100));
-        //entityManager.addEntity(new Ground(handler, 200, 200));
-        //entityManager.addCreature( new Octopus(handler,200,200));
+       
         loadWorld(message);
         entityManager.getPlayer().setX(spawnX);
         entityManager.getPlayer().setY(spawnY);
@@ -60,7 +58,8 @@ public class World  {
             return Tile.noneTile;
         return t;
     }
-
+	//Load the map and the entities
+	
     private void loadWorld(String message){
         String file = message;
         String[] tokens = file.split("\\s+");

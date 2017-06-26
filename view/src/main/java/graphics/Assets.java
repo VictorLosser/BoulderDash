@@ -15,7 +15,7 @@ public class Assets {
 	//Here we create the different variable of the Enemies images on the sprite
 	public static BufferedImage wall, boulder, ground, diamond, none;
 
-	
+	//Initializes the different sprites for the game
 	public static void init(){
 		SpriteSheet sheetRockford = new SpriteSheet(ImageLoader.loadImage("/textures/Rockford.png"));
 		SpriteSheet sheetEnemies = new SpriteSheet(ImageLoader.loadImage("/textures/Enemies.png"));

@@ -8,6 +8,8 @@ public class Animation {
 	public long lastTime, timer;
 	public BufferedImage[] frames;
 	
+	//Constructor of the class Animation
+	
 	public Animation(int speed, BufferedImage[] frames){
 		this.speed = speed;
 		this.frames =frames;
@@ -15,6 +17,8 @@ public class Animation {
 		timer = 0;
 		lastTime = System.currentTimeMillis();
 	}
+	
+	//The tick method of the class (tick tock)
 	public void tock(){
 		timer += System.currentTimeMillis() - lastTime;
 		lastTime = System.currentTimeMillis();
@@ -27,6 +31,8 @@ public class Animation {
 		}
 				
 	}
+	
+	/*/GETTERS/*/
 	public BufferedImage getCurrentFrame(){
 		return frames[index];
 	}

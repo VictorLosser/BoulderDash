@@ -8,11 +8,14 @@ public class Handler {
 
     private View game;
     private World world;
-
+   //Constructor of the class
     public Handler(View game){
         this.game = game;
     }
 
+    
+    /*/GETTERS AND SETTERS/*/
+    
     public GameCamera getGameCamera(){
         return game.getGameCamera();
     }

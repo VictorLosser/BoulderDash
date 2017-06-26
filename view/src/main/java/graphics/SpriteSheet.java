@@ -6,6 +6,7 @@ public class SpriteSheet {
 
 	private BufferedImage sheet;
 	
+	//Gets a part of the designated image
 	public SpriteSheet(BufferedImage sheet){
 		this.sheet = sheet;
 	}

@@ -10,12 +10,13 @@ public class GameCamera {
 	private Handler handler;
 	private float xOffset, yOffset;
 	
+	//Constructor of the class
 	public GameCamera(Handler handler, float xOffset, float yOffset){
 		this.handler = handler;
 		this.xOffset = xOffset;
 		this.yOffset = yOffset;
 	}
-	
+	//Checks the border of the map to be able to stop the camera
 	public void checkMapBorder(){
 		if(xOffset < 0){
 			xOffset = 0;
@@ -26,13 +27,13 @@ public class GameCamera {
 		}else if(yOffset > handler.getWorld().getHeight() *Tile.TILEHIGHT - handler.getHeight())
 			yOffset = handler.getWorld().getHeight() *Tile.TILEHIGHT - handler.getHeight();
 	}
-	
+	//Centers the camera on the selected entity
 	public void centerOnEntity(Entity e){
 		xOffset = e.getX() - handler.getWidth() / 2 + e.getWidth() / 2;
 		yOffset = e.getY() - handler.getHeight() / 2 + e.getHeight() / 2;
 		checkMapBorder();
 	}
-	
+	//Moves the camera
 	public void move(float xAmount, float yAmount){
 		xOffset += xAmount;
 		yOffset += yAmount;

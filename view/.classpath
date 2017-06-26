@@ -23,6 +23,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="res"/>
-	<classpathentry kind="lib" path="C:/Users/victo/Downloads/mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

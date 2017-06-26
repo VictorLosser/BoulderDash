@@ -9,6 +9,7 @@ public class KeyManager implements KeyListener {//We have to implements the KeyL
 	private boolean[] keys;
 	public boolean up, down, left, right, ddown, dup, dleft, dright;
 	
+	
 	public KeyManager(){
 		keys = new boolean[256];
 	}
