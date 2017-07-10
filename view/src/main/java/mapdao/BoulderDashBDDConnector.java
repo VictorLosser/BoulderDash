@@ -35,7 +35,7 @@ final class BoulderDashBDDConnector {
     /**
      * Instantiates a new boulder dash BDD connector.
      */
-    private BoulderDashBDDConnector() {
+    public BoulderDashBDDConnector() {
         this.open();
     }
 
@@ -66,7 +66,7 @@ final class BoulderDashBDDConnector {
      *
      * @return true, if successful
      */
-    private boolean open() {
+    public boolean open() {
         try {
             this.connection = DriverManager.getConnection(BoulderDashBDDConnector.url, BoulderDashBDDConnector.user,
                     BoulderDashBDDConnector.password);

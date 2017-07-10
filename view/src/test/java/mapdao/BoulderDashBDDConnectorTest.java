@@ -8,9 +8,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class MapTest {
+public class BoulderDashBDDConnectorTest {
 
-	private Map map;
+	BoulderDashBDDConnector boulderDashBDDConnector;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -22,7 +22,8 @@ public class MapTest {
 
 	@Before
 	public void setUp() throws Exception {
-		map = new Map(10,"nouvelle map");
+		
+		boulderDashBDDConnector = new BoulderDashBDDConnector();
 	}
 
 	@After
@@ -30,22 +31,17 @@ public class MapTest {
 	}
 
 	@Test
-	public void testGetName() {
-		String expected = "nouvelle map" ;
-		assertEquals(expected, map.getName());
-	}
-	
-	@Test
-	public void testGetId() {
-		int expected = 10;
-		assertEquals(expected, map.getId());
-	}
-	
-	@Test
-	public void testToString() {
-		String expected = "nouvelle map";
-		assertEquals(expected, map.getName());
-	}	
-	
+	public void testExecuteUpdate() throws Exception{
 		
+		int expected = 1; 
+		assertEquals(expected, boulderDashBDDConnector.executeUpdate("INSERT INTO example VALUES (520000, 'le test junit a marche')"));
+	}
+	
+	@Test
+	public void testOpen(){
+		
+		boolean expected = true;
+		assertEquals(expected, boulderDashBDDConnector.open());
+	}
+
 }

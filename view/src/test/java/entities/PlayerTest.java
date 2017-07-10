@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import view.Handler;
 
-public class PlayerTest extends CreatureTest {
+public class PlayerTest {
 
 	private Creature creature;
 
