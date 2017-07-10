@@ -2,6 +2,8 @@ package worlds;
 
 import static org.junit.Assert.*;
 
+import java.sql.SQLException;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -10,6 +12,7 @@ import org.junit.Test;
 
 import states.GameState;
 import view.Handler;
+import view.View;
 
 public class WorldTest {
 
@@ -26,10 +29,12 @@ public class WorldTest {
 
 	@Before
 	public void setUp() throws Exception {
-		
+
 		Handler handler = null;
-		gamestate = new GameState(handler);
 		
+		GameState gameState = new GameState(handler);
+		
+        
 	}
 
 	@After
