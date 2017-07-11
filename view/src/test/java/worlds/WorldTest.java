@@ -15,9 +15,14 @@ import view.Handler;
 import view.View;
 
 public class WorldTest {
-
-	private World world;
-	private GameState gamestate;
+	
+	View view;
+	
+	Handler handler;
+	
+	GameState gameState;
+	
+	World world;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -29,11 +34,13 @@ public class WorldTest {
 
 	@Before
 	public void setUp() throws Exception {
-
-		Handler handler = null;
+		view = new View("Boulder Dash", 1900, 1200);
 		
-		GameState gameState = new GameState(handler);
+		handler = new Handler(view);
 		
+		gameState = new GameState(handler);
+		
+		world = new World(handler, gameState.getMapById(4).toString());
         
 	}
 
@@ -45,15 +52,13 @@ public class WorldTest {
 	@Test
 	public void testGetWidth(){
 		int expected = 40;
-		int actual = world.getWidth();
-		assertEquals(expected, actual);
+		assertEquals(expected, world.getWidth());
 	}
 	
 	@Test
 	public void testGeHeight(){
 		int expected = 22;
-		int actual = world.getHeight();
-		assertEquals(expected, actual);
+		assertEquals(expected, world.getHeight());
 	}
 
 }

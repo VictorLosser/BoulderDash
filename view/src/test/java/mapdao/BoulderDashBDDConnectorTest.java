@@ -22,7 +22,6 @@ public class BoulderDashBDDConnectorTest {
 
 	@Before
 	public void setUp() throws Exception {
-		
 		boulderDashBDDConnector = new BoulderDashBDDConnector();
 	}
 
@@ -32,14 +31,12 @@ public class BoulderDashBDDConnectorTest {
 
 	@Test
 	public void testExecuteUpdate() throws Exception{
-		
 		int expected = 1; 
 		assertEquals(expected, boulderDashBDDConnector.executeUpdate("INSERT INTO example VALUES (520000, 'le test junit a marche')"));
 	}
 	
 	@Test
 	public void testOpen(){
-		
 		boolean expected = true;
 		assertEquals(expected, boulderDashBDDConnector.open());
 	}

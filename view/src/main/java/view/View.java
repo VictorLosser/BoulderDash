@@ -162,4 +162,8 @@ public class View implements Runnable {
 	public int getHeight() {
 		return height;
 	}
+
+	public String getTitle() {
+		return title;
+	}
 }

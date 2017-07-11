@@ -22,7 +22,7 @@ public class ViewTest {
 
 	@Before
 	public void setUp() throws Exception {
-		view = new View("oui", 1, 2);
+		view = new View("Boulder Dash!", 1, 2);
 	}
 
 	@After
@@ -39,6 +39,12 @@ public class ViewTest {
 	public void testGetWidth(){
 		final int expected = 1;
 		assertEquals(expected, view.getWidth());
+	}
+	
+	@Test
+	public void testGetTitle(){
+		final String expected = "Boulder Dash!";
+		assertEquals(expected, view.getTitle());
 	}
 
 }
