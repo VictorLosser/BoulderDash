@@ -1,15 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: worlds.WorldTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.003 sec <<< FAILURE!
-testGetWidth(worlds.WorldTest)  Time elapsed: 0.002 sec  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0 sec <<< FAILURE!
+testGetWidth(worlds.WorldTest)  Time elapsed: 0 sec  <<< ERROR!
 java.lang.NullPointerException
 	at mapdao.BoulderDashBDDConnector.prepareCall(BoulderDashBDDConnector.java:106)
 	at mapdao.AbstractDAO.prepareCall(AbstractDAO.java:44)
 	at mapdao.MapDAO.getMapById(MapDAO.java:24)
 	at states.GameState.getMapById(GameState.java:27)
 	at states.GameState.<init>(GameState.java:40)
-	at worlds.WorldTest.setUp(WorldTest.java:31)
+	at worlds.WorldTest.setUp(WorldTest.java:41)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -50,7 +50,7 @@ java.lang.NullPointerException
 	at mapdao.MapDAO.getMapById(MapDAO.java:24)
 	at states.GameState.getMapById(GameState.java:27)
 	at states.GameState.<init>(GameState.java:40)
-	at worlds.WorldTest.setUp(WorldTest.java:31)
+	at worlds.WorldTest.setUp(WorldTest.java:41)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
